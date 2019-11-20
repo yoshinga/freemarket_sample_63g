@@ -1,25 +1,113 @@
-# README
-## js
+# freemarket_sample_63g DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|kana_name|string|null: false|
+|nickname|string|null: false|
+|email|string|null: false|
+|telephone_number|string|null: false|
+|adress|string|null: false|
+|birthday|string|null: false|
+|Exhibiting|string|null: false|
+|point|string|null: false|
+|trading|string|null: false|
+|sold|string|null: false|
+|sales_amount|string|null: false|
+### Association
+- has_many :tweets
+- has_many :comments
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tweet
+- belongs_to :user
 
-* Ruby version
+## brandsテーブル 
+<!-- TODO:直し必要な可能性あり -->
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tweet
+- belongs_to :user
 
-* System dependencies
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tweet
+- belongs_to :user
 
-* Configuration
+## favoritesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tweet
+- belongs_to :user
 
-* Database creation
+## evalutionsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tweet
+- belongs_to :user
 
-* Database initialization
+## todosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tweet
+- belongs_to :user
 
-* How to run the test suite
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tweet
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+<!-- ------運営側------- -->
 
-* Deployment instructions
+## newsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tweet
+- belongs_to :user
 
-* ...
+## noticesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tweet
+- belongs_to :user
