@@ -9,17 +9,17 @@
 |email|string|null: false, unique: true|
 |telephone_number|integer|unique: true|
 |birthday|integer||
-|Exhibiting|integer|null: false|
-|profile|text|null: false|
+|Exhibiting|integer||
+|profile|text||
+|evalution_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
+|todo_id|references|foreign_key: true|
 <!-- 住所 -->
-|Postal code|integer|null: false|
+|Postal_code|integer|null: false|
 |Prefecture|string|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string||
-|evalution_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
-|todo_id|references|foreign_key: true|
 
 ### Association
 - has_many :todos
@@ -34,14 +34,14 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|sold_or_bought|boolean|null: false|
+|sold_or_bought|boolean||
 |image|string||
 |item_name|string|null: false, add_index:true|
-|discription|text|null: false|
-|user_id|references|null: false,foreign_key: true|
-|category_id|references|null: false,foreign_key: true|
+|discription|text||
+|user_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
 |brand|string||
-|condition|string|null: false|
+|condition|string||
 |price|integer|null: false|
 |delivery_fee|integer|null: false|
 |delivery_days|integer|null: false|
@@ -59,7 +59,7 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false, foreign_key: true|
+|item_id|references|foreign_key: true|
 |first_category|string|null: false|
 |second_category|string|null: false|
 |third_category|string|null: false|
@@ -71,8 +71,8 @@
 ## favoritesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
+|user_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
 ### Association
 - belongs_to :item
 - belongs_to :user
@@ -82,7 +82,7 @@
 ## evalutionsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|evalution|text|null: false|
+|evalution|text||
 |user_id|references|foreign_key: true|
 ### Association
 - belongs_to :user
@@ -92,9 +92,9 @@
 ## todosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null: false|
-|user_id|references|null: false|
-|todo_content|text|null: false, foreign_key: true|
+|item_id|references|foreign_key: true|
+|user_id|references|foreign_key: true|
+|todo_content|text||
 ### Association
 - belongs_to :user
 
@@ -114,8 +114,8 @@
 |------|----|-------|
 |total_point|integer||
 |history|string||
-|expiration_data|integer|null: false|
-|user_id|references|null: false, foreign_key: true|
+|expiration_data|integer||
+|user_id|references|foreign_key: true|
 ### Association
 - has_one :user
 
@@ -133,7 +133,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |notice|istring|null: false|
-|user_id|references|null: false|
+|user_id|references|foreign_key: true|
 ### Association
 - has_many :user, through: :user_notices
 
