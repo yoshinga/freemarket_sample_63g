@@ -1,0 +1,32 @@
+.signup-header
+  .signup-header__logo
+    = link_to image_tag("/fmarket_logo_red.svg",size: "200x120"), ""
+.signup-main
+  .signup-contents
+    .signup-contents-message 
+      %b 新規登録会員
+    .signup-contents-form
+      =link_to "", class:"signup-contents-form__btn signup-contents-form__btn--mail" do
+        = icon('far', 'envelope', class: "signup-contents-form__btn--icon ")
+        メールアドレスで登録する
+      =link_to "https://www.facebook.com/", class: "signup-contents-form__btn signup-contents-form__btn--facebook" do
+        = icon('fab', 'facebook-square', class: "signup-contents-form__btn--icon")
+        Facebookで登録する
+      =link_to "", class: "signup-contents-form__btn signup-contents-form__btn--google" do
+        = icon('fab', 'google', class: "signup-contents-form__btn--icon")
+        Googleで登録する
+.signup-footer
+  %ul.signup-footer__links
+    %li
+      = link_to '#', class: 'terms' do
+        プライバシーポリシー
+    %li
+      = link_to '#', class: 'terms' do
+        エフマーケット利用規約
+    %li
+      = link_to '#', class: 'terms' do
+        特定商取引に関する表記
+  .signup-footer__logo
+    = link_to image_tag('/logo_gray.svg', size: "100x100"), ""
+    
+  %p.signup-footer__down © 2019 Fmarket

@@ -1,5 +1,6 @@
 # freemarket_sample_63g DB設計
 
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
