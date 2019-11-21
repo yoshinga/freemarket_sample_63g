@@ -3,12 +3,14 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|kana_name|string|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_kana_name|string|null: false|
+|first_kana_name|string|null: false|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
-|telephone_number|integer|unique: true|
-|birthday|integer||
+|telephone_number|integer||
+|birthday|integer|default: '登録されていません'|
 |Exhibiting|integer||
 |profile|text||
 |evalution_id|references|foreign_key: true|
