@@ -10,7 +10,6 @@
 .signup-main{
   background-color: #f5f5f5;
   .signup-contents {
-    height: calc(100vh - 120px - 350px);
     width:700px;
     margin: 0 auto;
     background-color: #fff;
@@ -20,13 +19,14 @@
       text-align: center;
       border: solid 1px #f5f5f5;
     }
-    .signup-contents-form{
+    .signup-contents-box{
       background-color: #fff;
+      padding-bottom: 50px;
       &__btn{
         display: block;
         height: 50px;
         width :50%;
-        margin:15px auto 15px;
+        margin: 30px auto 0;
         border-radius: 5px;
         font-size:14px;
         color:#fff;
