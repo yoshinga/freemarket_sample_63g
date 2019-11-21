@@ -10,8 +10,8 @@
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |telephone_number|integer||
-|birthday|integer|default: '登録されていません'|
-|Exhibiting|integer||
+|birthday|integer||
+|exhibiting|integer||
 |profile|text||
 |evalution_id|references|foreign_key: true|
 |item_id|references|foreign_key: true|
@@ -115,9 +115,18 @@
 |Column|Type|Options|
 |------|----|-------|
 |total_point|integer||
-|history|string||
 |expiration_data|integer||
 |user_id|references|foreign_key: true|
+### Association
+- has_one :user
+
+## hestoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|point_id|integer||
+|point_plus_or_minus|string||
+|title|integer||
+||references|foreign_key: true|
 ### Association
 - has_one :user
 
@@ -127,6 +136,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |news_content|text|null: false|
+|title|string|null: false|
 ### Association
 
 
@@ -136,6 +146,7 @@
 |------|----|-------|
 |notice|istring|null: false|
 |user_id|references|foreign_key: true|
+|title|string|null: false|
 ### Association
 - has_many :user, through: :user_notices
 
