@@ -120,6 +120,7 @@
 |user_id|references|foreign_key: true|
 ### Association
 - has_one :user
+- has_many :hestory
 
 ## hestoriesテーブル
 |Column|Type|Options|
@@ -127,9 +128,9 @@
 |point_id|integer||
 |point_plus_or_minus|string||
 |title|integer||
-||references|foreign_key: true|
+|date|references|foreign_key: true|
 ### Association
-- has_one :user
+- belongs_to :point
 
 <!-- ------運営側------- -->
 
