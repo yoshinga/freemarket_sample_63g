@@ -1,4 +1,4 @@
-# freemarket_sample_63g DB設計
+
 
   
 ## usersテーブル
@@ -162,3 +162,4 @@
 ### Association
 - belongs_to :notice
 - belongs_to :user
+
