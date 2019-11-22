@@ -4,15 +4,14 @@
   %a.items-display__wrap__title__items-detail
     もっと見る&nbsp;&#62;
 %ul.items-display__wrap__goods
-  %li.items-display__wrap__goods__box
-  %li.items-display__wrap__goods__box
-  %li.items-display__wrap__goods__box
-  %li.items-display__wrap__goods__box
-  %li.items-display__wrap__goods__box
-  %li.items-display__wrap__goods__box
-  %li.items-display__wrap__goods__box
-  %li.items-display__wrap__goods__box
-  %li.items-display__wrap__goods__box
-  %li.items-display__wrap__goods__box
-
-
+  - @items.each do |item|
+    %li.items-display__wrap__goods__box
+      // この下の.items-display__wrap__goods__box__divのカスタムデータ属性に商品詳細ページのリンクを貼ってください //
+      .items-display__wrap__goods__box__div  
+        .items-display__wrap__goods__box__div__view
+          = image_tag 'marcari_toys.jpg', alt: 'marcari_toys', class: 'items-display__wrap__goods__box__div__view__top'
+        %p.items-display__wrap__goods__box__div__view__price-label
+          &yen;10,000
+        .items-display__wrap__goods__box__div__view__bottom
+          %p.items-display__wrap__goods__box__div__view__bottom__p
+            デュフフデュフフデュフフデュフフデュフフデュフフ
