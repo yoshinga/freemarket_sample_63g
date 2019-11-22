@@ -1,0 +1,85 @@
+main {
+  .top-image {
+    display: flex;
+    height: 390px;
+    background-image: url('marcari3.jpg');
+    background-position: center;
+    align-items: center;
+    font-size: 30px;
+    justify-content: space-between;
+    cursor: pointer;
+    &__shift-left {
+      color: white;
+      margin-left: 50px;
+      font-size: 40px;
+    }
+    &__shift-right {
+      color: white;
+      margin-right: 50px;
+      font-size: 40px;
+    }
+  }
+  .items-nav {
+    text-align: center;
+    height: 90px;
+    background: white;
+    padding: 55px 0 30px 0;
+    &__heading {
+      font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    &__lists {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 15px;
+      &__list {
+        padding: 0 10px;
+        margin-left: 13px;
+        cursor: pointer;
+        height: 30px;
+        background: #f5efef;
+        line-height: 30px;
+        border-radius: 15px;
+        &__link {
+       }
+      }
+    }
+  }
+  .items-display__wrap {
+    padding: 40px 15% 100px;
+    &__title {
+      display: flex;
+      align-items: center;
+      margin: 60px 0 15px;
+      &:first-child {
+        margin-top: 0;
+      }
+      &__heading {
+        font-weight: bold;
+        font-size: 25px;
+      }
+      &__items-detail {
+        font-weight: bold;
+        color: #17a7e2;
+        margin-left: auto;
+      }
+    }
+    &__goods {
+      display: flex;
+      flex-wrap: wrap;
+      &__box {
+      padding: 10px;
+      width: 20%;
+      height: 20px;
+      background: orange;
+      }
+    }
+  }   
+  .bottom-image {
+    height: 390px;
+    background-image: url('marcari4.jpg');
+    background-position: center;
+  }
+}
