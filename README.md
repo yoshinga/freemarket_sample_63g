@@ -17,21 +17,29 @@
 |evalution_id|references|foreign_key: true|
 |item_id|references|foreign_key: true|
 |todo_id|references|foreign_key: true|
-<!-- 住所 -->
+|address_id|references|foreign_key: true|
+
+### Association
+- has_many :todos
+- has_many :evalutions
+- has_many :items
+- has_one :point
+- has_one :address
+- has_many :notices
+- has_many :favorites
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |Postal_code|integer|null: false|
 |Prefecture|string|null: false|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string||
+|user_id|references|foreign_key: true|
 
 ### Association
-- has_many :todos
-- has_many :evalutions
-- has_many :items, through: :favorites
-- has_many :items
-- has_one :point
-- has_many :notice, through: :user_notices
-
+- has_one :user
 
 
 ## itemsテーブル
@@ -54,8 +62,9 @@
 ### Association
 - belongs_to :category
 - belongs_to :user
+- belongs_to :todo
 - has_many :comments
-- has_many :users, through: :favorites
+- has_many :favorite
 
 
 
@@ -100,6 +109,7 @@
 |todo_content|text||
 ### Association
 - belongs_to :user
+- belongs_to :item
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -109,6 +119,7 @@
 |item_id|references|foreign_key: true|
 ### Association
 - belongs_to :item
+- belongs_to :user
 
 
 
@@ -150,15 +161,4 @@
 |user_id|references|foreign_key: true|
 |title|string|null: false|
 ### Association
-- has_many :user, through: :user_notices
-
-
-
-## user_noticesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|notice_id|references|foreign_key: true|
-|user_id|references|foreign_key: true|
-### Association
-- belongs_to :notice
 - belongs_to :user
