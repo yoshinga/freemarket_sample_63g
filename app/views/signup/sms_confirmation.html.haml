@@ -6,26 +6,21 @@
     .signup-contents-message 
       %b 電話登録の確認
     .signup-contents-box
-      = form_with model: @user, class: :tel_class do |form| 
-        携帯電話の番号
-        = form.text_field :aaaaa, placeholder: "携帯電話の番号を入力" 
-        本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-        = form.submit "SNSを送信する"
-        ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-        = link_to '#', class: 'help_center' do
-          電話番号の確認が必要な理由＞
-.signup-footer
-  %ul.signup-footer__links
-    %li
-      = link_to '#', class: 'terms' do
-        プライバシーポリシー
-    %li
-      = link_to '#', class: 'terms' do
-        エフマーケット利用規約
-    %li
-      = link_to '#', class: 'terms' do
-        特定商取引に関する表記
-  .signup-footer__logo
-    = link_to image_tag('/logo_gray.svg', size: "100x100"), ""
-    
-  %p.signup-footer__down © 2019 Fmarket
+      .signup-contents-box-inner
+        = form_with model: @user, class: :tel_class do |form| 
+          .signup-contents-box-inner__field
+            %b 携帯電話の番号 
+            %br
+            = form.text_field :text, class: 'input-field', placeholder: "    携帯電話の番号を入力"
+          .signup-contents-box-inner-form
+            %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          .signup-contents-box-inner__btn
+            = form.submit "SNSを送信する", class: 'signup-contents-box-inner__btn--red'
+          .signup-contents-box-inner-form
+            %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+          .signup-contents-box-inner-form
+            = link_to '#', class: 'help_center' do
+              電話番号の確認が必要な理由 
+              %b＞
+
+= render partial: "shared/signup-footer"
