@@ -1,6 +1,3 @@
-
-
-  
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -18,13 +15,14 @@
 |item_id|references|foreign_key: true|
 |todo_id|references|foreign_key: true|
 |address_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
 
 ### Association
-- has_many :todos
-- has_many :evalutions
-- has_many :items
-- has_one :point
-- has_one :address
+- has_many :todos, dependent: :destroy
+- has_many :evalutions, dependent: :destroy
+- has_many :items, dependent: :destroy
+- has_one :point, dependent: :destroy
+- has_one :address, dependent: :destroy
 - has_many :notices
 - has_many :favorites
 
@@ -51,7 +49,8 @@
 |discription|text||
 |user_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
-|brand|string||
+|evalution_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
 |condition|string||
 |price|integer|null: false|
 |delivery_fee|integer|null: false|
@@ -63,22 +62,54 @@
 - belongs_to :category
 - belongs_to :user
 - belongs_to :todo
-- has_many :comments
-- has_many :favorite
-
-
+- has_many :comments, dependent: :destroy
+- has_many :favorite, dependent: :destroy
+- has_many :evalution, dependent: :destroy
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|foreign_key: true|
-|first_category|string|null: false|
-|second_category|string|null: false|
-|third_category|string|null: false|
+|first_category_id|references|foreign_key: true|
+|second_category_id|references|foreign_key: true|
+|third_category_id|references|foreign_key: true|
 ### Association
 - has_many :items
 
+## first_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|foreign_key: true|
+|first_category|integer||
+### Association
+- belongs_to :category
 
+## second_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|foreign_key: true|
+|second_category|integer||
+
+### Association
+- belongs_to :category
+
+## third_categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|foreign_key: true|
+|third_category|integer||
+### Association
+- belongs_to :category
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|foreign_key: true|
+|user_id|string|null: false|
+|brand_name|string|null: true|
+
+### Association
+- has_many :items
 
 ## favoritesテーブル
 |Column|Type|Options|
@@ -121,8 +152,6 @@
 - belongs_to :item
 - belongs_to :user
 
-
-
 ## pointsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -131,7 +160,7 @@
 |user_id|references|foreign_key: true|
 ### Association
 - has_one :user
-- has_many :hestory
+- has_many :hestory, dependent: :destroy
 
 ## hestoriesテーブル
 |Column|Type|Options|
