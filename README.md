@@ -14,7 +14,6 @@
 |evalution_id|references|foreign_key: true|
 |item_id|references|foreign_key: true|
 |todo_id|references|foreign_key: true|
-|address_id|references|foreign_key: true|
 |brand_id|references|foreign_key: true|
 
 ### Association
@@ -164,7 +163,7 @@
 |user_id|references|foreign_key: true|
 ### Association
 - has_one :user
-- has_many :hestory, dependent: :destroy
+- has_many :hestories, dependent: :destroy
 
 ## hestoriesテーブル
 |Column|Type|Options|
