@@ -75,6 +75,10 @@
 |third_category_id|references|foreign_key: true|
 ### Association
 - has_many :items
+- has_one : first_category
+- has_one : second_category
+- has_one : third_category
+
 
 ## first_categoriesテーブル
 |Column|Type|Options|
@@ -82,7 +86,7 @@
 |item_id|references|foreign_key: true|
 |first_category|integer||
 ### Association
-- belongs_to :category
+- has_one :category
 
 ## second_categoriesテーブル
 |Column|Type|Options|
@@ -91,7 +95,7 @@
 |second_category|integer||
 
 ### Association
-- belongs_to :category
+- has_one :category
 
 ## third_categoriesテーブル
 |Column|Type|Options|
@@ -99,7 +103,7 @@
 |item_id|references|foreign_key: true|
 |third_category|integer||
 ### Association
-- belongs_to :category
+- has_one :category
 
 ## brandsテーブル
 |Column|Type|Options|
