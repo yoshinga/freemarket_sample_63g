@@ -43,9 +43,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |sold_or_bought|boolean||
-|image|string||
-|item_name|string|null: false, add_index:true|
+|item_name|string|null: false, add_index: true|
 |discription|text||
+|image_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
 |evalution_id|references|foreign_key: true|
@@ -54,9 +54,7 @@
 |price|integer|null: false|
 |delivery_fee|integer|null: false|
 |delivery_days|integer|null: false|
-|item_trading|boolean||
-|item_sold|boolean||
-|item_sales_amount|boolean||
+|item_condition|integer||
 ### Association
 - belongs_to :category
 - belongs_to :user
@@ -65,52 +63,28 @@
 - has_many :favorite, dependent: :destroy
 - has_many :evalution, dependent: :destroy
 
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|string||
+|url|string||
+### Association
+- has_many :items
+
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|foreign_key: true|
-|first_category_id|references|foreign_key: true|
-|second_category_id|references|foreign_key: true|
-|third_category_id|references|foreign_key: true|
+|name|string||
+|ancestry|integer|add_index:true|
 ### Association
 - has_many :items
-- has_one : first_category
-- has_one : second_category
-- has_one : third_category
-
-
-## first_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|foreign_key: true|
-|first_category|integer||
-### Association
-- has_one :category
-
-## second_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|foreign_key: true|
-|second_category|integer||
-
-### Association
-- has_one :category
-
-## third_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|references|foreign_key: true|
-|third_category|integer||
-### Association
-- has_one :category
+- has_ancestry
 
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|foreign_key: true|
-|user_id|string|null: false|
 |brand_name|string|null: true|
-
 ### Association
 - has_many :items
 
