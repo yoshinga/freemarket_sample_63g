@@ -11,10 +11,11 @@
 |birthday|integer||
 |exhibiting|integer||
 |profile|text||
-|evalution_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
-|todo_id|references|foreign_key: true|
-|brand_id|references|foreign_key: true|
+|evalution|references|foreign_key: true|
+|item|references|foreign_key: true|
+|todo|references|foreign_key: true|
+|brand|references|foreign_key: true|
+
 
 ### Association
 - has_many :todos, dependent: :destroy
@@ -24,6 +25,8 @@
 - has_one :address, dependent: :destroy
 - has_many :notices
 - has_many :favorites
+- has_many :item, foreign_key:buyer_id
+- has_many :item, foreign_key:seller_id
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -42,19 +45,20 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|sold_or_bought|boolean||
 |item_name|string|null: false, add_index: true|
 |discription|text||
-|image_id|references|foreign_key: true|
-|user_id|references|foreign_key: true|
-|category_id|references|foreign_key: true|
-|evalution_id|references|foreign_key: true|
-|brand_id|references|foreign_key: true|
+|image|references|foreign_key: true|
+|user|references|foreign_key: true|
+|category|references|foreign_key: true|
+|evalution|references|foreign_key: true|
+|brand|references|foreign_key: true|
 |condition|string||
 |price|integer|null: false|
 |delivery_fee|integer|null: false|
 |delivery_days|integer|null: false|
-|item_condition|integer||
+|item_status|integer||
+|buyer|references|foreign_key: true|
+|seller|references|foreign_key: true|
 ### Association
 - belongs_to :category
 - belongs_to :user
@@ -62,6 +66,8 @@
 - has_many :comments, dependent: :destroy
 - has_many :favorite, dependent: :destroy
 - has_many :evalution, dependent: :destroy
+- belongs_to :user, foreign_key: :buyer_id
+- belongs_to :user, foreign_key: :seller_id
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -91,8 +97,8 @@
 ## favoritesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
+|user|references|foreign_key: true|
+|item|references|foreign_key: true|
 ### Association
 - belongs_to :item
 - belongs_to :user
@@ -102,8 +108,9 @@
 ## evalutionsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|evalution|text||
-|user_id|references|foreign_key: true|
+|rank|integer||
+|user|references|foreign_key: true|
+|user|references|foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -112,8 +119,8 @@
 ## todosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|foreign_key: true|
-|user_id|references|foreign_key: true|
+|item|references|foreign_key: true|
+|user|references|foreign_key: true|
 |todo_content|text||
 ### Association
 - belongs_to :user
@@ -123,8 +130,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
-|user_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
+|user|references|foreign_key: true|
+|item|references|foreign_key: true|
 ### Association
 - belongs_to :item
 - belongs_to :user
@@ -134,7 +141,7 @@
 |------|----|-------|
 |total_point|integer||
 |expiration_data|integer||
-|user_id|references|foreign_key: true|
+|user|references|foreign_key: true|
 ### Association
 - has_one :user
 - has_many :hestories, dependent: :destroy
@@ -142,10 +149,10 @@
 ## hestoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|point_id|integer||
-|point_plus_or_minus|string||
+|point|references||
+|hestory_point|string||
 |title|integer||
-|date|references|foreign_key: true|
+|date|string||
 ### Association
 - belongs_to :point
 
