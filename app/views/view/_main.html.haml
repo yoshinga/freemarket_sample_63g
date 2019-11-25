@@ -1,7 +1,9 @@
 // ここから画面上部の画像
 .top-image
-  = fa_icon 'angle-left', class: 'top-image__shift-left'
-  = fa_icon 'angle-right', class: 'top-image__shift-right'
+  -# = fa_icon 'angle-left', class: 'top-image__shift-left'
+  -# = fa_icon 'angle-right', class: 'top-image__shift-right'
+  .fas.fa-angle-left.top-image__shift-left
+  .fas.fa-angle-right.top-image__shift-right
 
 // ここから人気カテゴリー
 = render 'items-nav'

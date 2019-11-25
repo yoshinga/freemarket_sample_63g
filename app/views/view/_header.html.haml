@@ -5,18 +5,21 @@
     -# .header__upper-list__small-width__log-in
     %form.header__upper-list__form
       %input.header__upper-list__form__text{type: "text", value:"", placeholder: "何かお探しですか？"}
-      = fa_icon 'search', class: 'header__upper-list__form__icon'
+      -# = fa_icon 'search', class: 'header__upper-list__form__icon'
+      .fas.fa-search.header__upper-list__form__icon
   -# .header__midle-list
   -#   %form.header__upper-list__form
   -#     %input.hader__upper-list__form__text{type: "text", }
   -#     = fa_icon 'search', class: 'header__upper-list__form__icon'
   .header__bottom-list
     .header__bottom-list__left
-      = fa_icon 'bars', class: 'header__bottom-list__left__icon'
+      -# = fa_icon 'bars', class: 'header__bottom-list__left__icon'
+      .fa.fa-bars.header__bottom-list__left__icon
       %p.header__bottom-list__left__p
         カテゴリーから探す
     .header__bottom-list__second-left
-      = fa_icon 'tags', class: 'header__bottom-list__second-left__icon'
+      -# = fa_icon 'tags', class: 'header__bottom-list__second-left__icon'
+      .fas.fa-tags.header__bottom-list__second-left__icon
       %p.header__bottom-list__second-left__p
         ブランドから探す
     .header__bottom-list__rigth
