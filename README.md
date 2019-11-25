@@ -9,7 +9,7 @@
 |email|string|null: false, unique: true|
 |telephone_number|integer||
 |birthday|integer||
-|exhibiting|integer||
+|Sales|integer||
 |profile|text||
 |evalution|references|foreign_key: true|
 |item|references|foreign_key: true|
