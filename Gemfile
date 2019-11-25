@@ -62,6 +62,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
+
 group :production do
   gem 'unicorn', '5.4.1'
 end
@@ -70,4 +71,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'haml-rails'
 gem 'font-awesome-sass'
+
 

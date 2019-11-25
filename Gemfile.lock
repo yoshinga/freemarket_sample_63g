@@ -91,6 +91,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
+    erb2haml (0.1.5)
+      html2haml
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -101,6 +103,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.11.2)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     font-awesome-sass (5.11.2)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -264,6 +268,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  erb2haml
+  font-awesome-rails
   devise
   font-awesome-sass
   haml-rails
