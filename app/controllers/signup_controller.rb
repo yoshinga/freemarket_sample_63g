@@ -1,6 +1,7 @@
 class SignupController < ApplicationController
   
   def registration
+    @user = User.new #新規インスタンス作成
   end
 
   def sms_confirmation
