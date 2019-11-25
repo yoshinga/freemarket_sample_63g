@@ -1,8 +1,6 @@
 .header
   .header__upper-list
-    = image_tag 'fmarket_logo_red.svg', alt: 'fmarket_logo_red', height: '40', class: 'header__upper-list__icon'
-    -# .header__upper-list__small-width__sign-up
-    -# .header__upper-list__small-width__log-in
+    = image_tag '/fmarket_logo_red.svg', alt: 'fmarket_logo_red', height: '40', class: 'header__upper-list__icon'
     %form.header__upper-list__form
       %input.header__upper-list__form__text{type: "text", value:"", placeholder: "何かお探しですか？"}
       -# = fa_icon 'search', class: 'header__upper-list__form__icon'
@@ -20,6 +18,7 @@
     .header__bottom-list__second-left
       -# = fa_icon 'tags', class: 'header__bottom-list__second-left__icon'
       .fas.fa-tags.header__bottom-list__second-left__icon
+
       %p.header__bottom-list__second-left__p
         ブランドから探す
     .header__bottom-list__rigth
