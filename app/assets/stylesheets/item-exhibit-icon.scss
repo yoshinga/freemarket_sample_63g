@@ -1,0 +1,26 @@
+.item-exhibit {
+  cursor: pointer;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  height: 160px;
+  width: 160px;
+  background: red;
+  border-radius: 50%;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__wrap {
+    text-align: center;
+    &__heading {
+      color: white;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    &__icon {
+      color: white;
+      font-size: 60px;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+// ここから画面上部の画像
+.top-image
+  = fa_icon 'angle-left', class: 'top-image__shift-left'
+  = fa_icon 'angle-right', class: 'top-image__shift-right'
+
+// ここから人気カテゴリー
+= render 'items-nav'
+// ここから人気カテゴリーの新着アイテム
+.items-display__wrap
+  = render 'items-display'
+  = render 'items-display'
+  = render 'items-display'
+  = render 'items-display'
+
+// ここから人気ブランド
+= render 'items-nav'
+// ここから人気ブランドの新着アイテム
+.items-display__wrap
+  = render 'items-display'
+  = render 'items-display'
+  = render 'items-display'
+  = render 'items-display'
+
+// ここから画面下部の画像
+.bottom-image
+  = render 'bottom-image' 

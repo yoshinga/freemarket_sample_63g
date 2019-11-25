@@ -1,0 +1,80 @@
+.footer {
+  height: 390px;
+  background: black;
+  padding: 0px 20px 10px;
+  &__top-content {
+    height: 335px;
+    margin: 0 auto;
+    display: flex;
+    width: 80%;
+    &__boxes {
+      color: white;
+      width: calc(100% / 5);
+      margin-top: 20px;
+      padding-right: 40px;
+      &__p {
+        font-weight: bold;
+      }
+      &__ul {
+        &__lists {
+          color: rgb(204, 204, 204);
+          font-size: 12px;
+          margin-top: 16px;
+        }
+      }
+      &__icons {
+        margin-top: 30px;
+        &__icon {
+          text-decoration: none;
+          color: white;
+          &__twitter {
+            font-size: 27px;
+            margin-right: 20px;
+          }
+          &__facebook {
+            font-size: 27px;
+          }
+        }
+      }
+    }
+    &__iregular-boxes {
+      color: white;
+      margin-top: 20px;
+      padding-right: 40px;
+      &__p {
+        font-weight: bold;
+      }
+      &__ul {
+        display: flex;
+        &__wrap-lists {
+          &:first-child {
+            padding-right: 40px;
+          }
+          &__content {
+            color: rgb(204, 204, 204);
+            font-size: 12px;
+            margin-top: 16px;
+          }
+        }
+      }
+    }
+  }
+  &__bottom-content {
+    display: flex;
+    margin: 10px auto;
+    width: 80%;
+    align-items: center;
+    color: white;
+    &__h1 {
+      font-size: 20px !important;
+      margin-left: 10px;
+    }
+    &__logo {
+      color: white;
+    }
+    &__p {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}
