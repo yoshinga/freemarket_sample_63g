@@ -7,7 +7,7 @@
       %p アカウントをお持ちでない方はこちら
       .signup-contents-no-account-box
         .signup-contents-no-account-box-inner
-          =link_to "/signup/registration", class:"signup-contents-no-account-box-inner__btn" do
+          =link_to "/users/sign_up", class:"signup-contents-no-account-box-inner__btn" do
             新規会員登録
     .signup-contents-box
       .signup-contents-box-inner
@@ -17,10 +17,14 @@
         =link_to "", class: "signup-contents-box-inner__btn signup-contents-box-inner__btn--google" do
           = icon('fab', 'google', class: "signup-contents-box-inner__btn--icon")
           Googleでログイン
+      .signup-contents-box-inner
         = form_with class: :tel_class do |form|
           .signup-contents-box-inner__field
-            %b お名前  
-            %span.red-mini 必須
-            = form.text_field :text, class: 'input-field', placeholder: "   例）山田"
-            = form.text_field :text, class: 'input-field', placeholder: "   例）彩"
+            = form.text_field :text, class: 'input-field', placeholder: "   例）メールアドレス"
+            = form.text_field :text, class: 'input-field', placeholder: "   例）パスワード"
+          .signup-contents-box-inner__field
+            = image_tag("/ロボットimage.png",size: "328x78")
+          .signup-contents-box-inner__btn
+            = form.submit "次へ進む", class: 'signup-contents-box-inner__btn--red'
+
 = render partial: "shared/signup-footer"
