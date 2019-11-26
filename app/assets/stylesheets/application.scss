@@ -1,5 +1,11 @@
+@import "config/reset";
+@import "header";
+@import "footer";
+@import "main";
 @import "./reset";
-@import "modules/signup2";
+@import "modules/signup";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "users";
+@import "item-exhibit-icon";
+@import "bottom-image";

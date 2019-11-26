@@ -1,0 +1,30 @@
+.header
+  .header__upper-list
+    = image_tag '/fmarket_logo_red.svg', alt: 'fmarket_logo_red', height: '40', class: 'header__upper-list__icon'
+    %form.header__upper-list__form
+      %input.header__upper-list__form__text{type: "text", value:"", placeholder: "何かお探しですか？"}
+      -# = fa_icon 'search', class: 'header__upper-list__form__icon'
+      .fas.fa-search.header__upper-list__form__icon
+  -# .header__midle-list
+  -#   %form.header__upper-list__form
+  -#     %input.hader__upper-list__form__text{type: "text", }
+  -#     = fa_icon 'search', class: 'header__upper-list__form__icon'
+  .header__bottom-list
+    .header__bottom-list__left
+      -# = fa_icon 'bars', class: 'header__bottom-list__left__icon'
+      .fa.fa-bars.header__bottom-list__left__icon
+      %p.header__bottom-list__left__p
+        カテゴリーから探す
+    .header__bottom-list__second-left
+      -# = fa_icon 'tags', class: 'header__bottom-list__second-left__icon'
+      .fas.fa-tags.header__bottom-list__second-left__icon
+
+      %p.header__bottom-list__second-left__p
+        ブランドから探す
+    .header__bottom-list__rigth
+      .header__bottom-list__rigth__sign-up
+        %a.header__bottom-list__rigth__sign-up__link
+          新規登録
+      .header__bottom-list__rigth__log-in
+        %a.header__bottom-list__rigth__log-in__link
+          ログイン

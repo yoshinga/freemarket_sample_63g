@@ -1,0 +1,22 @@
+.bottom-image {
+  padding-top: 200px;
+  &__nav {
+    display: flex;
+    align-items: center;
+    &__logo {
+      margin-left: 400px;
+      height: 60px;
+      width: 60px;
+      background: white;
+      border-radius: 10px;
+    }
+    &__app {
+      cursor: pointer;
+      height: 40px;
+      width: 150px;
+      margin-left: 30px;
+      background: orange;
+      border-radius: 10px;
+    }
+  }
+}

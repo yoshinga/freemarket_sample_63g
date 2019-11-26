@@ -1,0 +1,122 @@
+main {
+
+  .top-image {
+    display: flex;
+    height: 390px;
+    background-image: url('marcari3.jpg');
+    background-position: center;
+    align-items: center;
+    font-size: 30px;
+    justify-content: space-between;
+    cursor: pointer;
+    &__shift-left {
+      color: white;
+      margin-left: 50px;
+      font-size: 40px;
+    }
+    &__shift-right {
+      color: white;
+      margin-right: 50px;
+      font-size: 40px;
+    }
+  }
+  .items-nav {
+    text-align: center;
+    height: 90px;
+    background: white;
+    padding: 55px 0 30px 0;
+    &__heading {
+      font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    &__lists {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 15px;
+      &__list {
+        padding: 0 10px;
+        margin-left: 13px;
+        cursor: pointer;
+        height: 30px;
+        background: #f5efef;
+        line-height: 30px;
+        border-radius: 15px;
+        &__link {
+       }
+      }
+    }
+  }
+  .items-display__wrap {
+    background: #f5efef;
+    padding: 40px 15% 100px;
+    &__title {
+      display: flex;
+      align-items: center;
+      margin: 60px 0 15px;
+      &:first-child {
+        margin-top: 0;
+      }
+      &__heading {
+        font-weight: bold;
+        font-size: 25px;
+      }
+      &__items-detail {
+        font-weight: bold;
+        color: #17a7e2;
+        margin-left: auto;
+      }
+    }
+    &__goods {
+      display: flex;
+      flex-wrap: wrap;
+      &__box {
+        padding: 10px;
+        width: 17%;
+        &__div {
+          position: relative;
+          cursor: pointer;
+          border: 1px rgba($color: blue, $alpha: 0) solid;
+          box-sizing: border-box;
+          &:hover {
+            border: 1px blue solid;
+          }
+          &__view {
+            height: 180px;
+            &__top {
+                height: 180px;
+                width: 100%;
+            }
+            &__price-label {
+              color: white;
+              top: 120px;
+              padding-left: 10px;
+              position: absolute;
+              background: rgba($color: black, $alpha: 0.7);
+              height: 30px;
+              line-height: 30px;
+              width: 50%;
+              border-top-right-radius: 10px;
+              border-bottom-right-radius: 10px;
+            }
+            &__bottom {
+              height: 50px;
+              padding: 10px 10px;
+              background: white;
+              &__p {
+                height: 50px;
+                overflow: hidden;
+              }
+            }
+          }
+        }      
+      }
+    }
+  }   
+  .bottom-image {
+    height: 100px;
+    background-image: url('marcari4.jpg');
+    background-position: center;
+  }
+}
