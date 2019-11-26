@@ -1,0 +1,206 @@
+.default-container
+  .bread-crumbs
+  .l-container
+
+    .l-side
+      .mypage-nav
+        %ul.ul-nav-list
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              マイページ
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              お知らせ
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              やることリスト
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              いいね！一覧
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              出品する
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              出品した商品 - 出品中
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              出品した商品 - 取引中
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              出品した商品 - 売却済み
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              購入した商品 - 取引中
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              購入した商品 - 過去の取引
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              ニュース一覧
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              評価一覧
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              ガイド
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            %a.ul-nav-list__li__a{:href => "#"}
+              お問い合わせ
+            %i.fas.fa-chevron-right
+
+        .mypage-nav-head
+          %h3
+            メルペイ
+        .mypage-nav-list
+          %ul.ul-nav-list
+            %li.ul-nav-list__li
+              %a.mypage-nav-list-item{:href => "#"}
+                売上・振込申請
+              %i.fas.fa-chevron-right
+
+            %li.ul-nav-list__li 
+              %a.mypage-nav-list-item{:href => "#"}
+                ポイント
+              %i.fas.fa-chevron-right
+        .mypage-nav-head
+          %h3
+            設定
+        .mypage-nav-list
+          %ul.ul-nav-list
+            %li.ul-nav-list__li 
+              %a.mypage-nav-list-item{:href => "#"}
+                プロフィール
+              %i.fas.fa-chevron-right
+            %li.ul-nav-list__li 
+              %a.mypage-nav-list-item{:href => "#"}
+                発送元・お届け先住所変更
+              %i.fas.fa-chevron-right
+            %li.ul-nav-list__li 
+              %a.mypage-nav-list-item{:href => "#"}
+                支払い方法
+              %i.fas.fa-chevron-right
+            %li.ul-nav-list__li 
+              %a.mypage-nav-list-item{:href => "#"}
+                メール/パスワード
+              %i.fas.fa-chevron-right
+            %li.ul-nav-list__li 
+              %a.mypage-nav-list-item{:href => "#"}
+                本人情報
+              %i.fas.fa-chevron-right
+            %li.ul-nav-list__li 
+              %a.mypage-nav-list-item{:href => "#"}
+                電話番号の確認
+              %i.fas.fa-chevron-right
+            %li.ul-nav-list__li 
+              %a.mypage-nav-list-item{:href => "#"}
+                ログアウト
+              %i.fas.fa-chevron-right
+
+    .l-content
+      // ここから自由に命名
+      .mypage-user-icon
+        %a.mypage-user-icon__a{:href => "#"}
+          %figure.mypage-user-icon__a__figure
+            %img{:alt => "", :height => "60", :src => "//static.mercdn.net/thumb/members/159191531.jpg?1574387316", :width => "60"}/
+          .mypage
+            %h2.bold よし
+            .mypage-number
+              %div.mypage-number__bold
+                評価
+                %span 3
+              %div.mypage-number__bold
+                出品数
+                %span 0
+      .mypage-tab-container-notification-todo
+        .mypage-tabs
+          %h3.mypage-tabs__h3
+            %a.mypage-tabs__h3__a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
+              お知らせ                
+          %h3.mypage-tabs__h3
+            %a.mypage-tabs__h3__a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
+              やることリスト   
+        .tab-content
+          %ul.tab-content__ul
+            %li.tab-content__ul__li
+              %a.tab-content__ul__li__a{:href => "#"}
+                %figure.tab-content__ul__li__a__figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                .mypage-item-body
+                  .mypage-item-body__text 事務局から個別メッセージ「【お詫び】本日お送りした「お知らせ」の不具合について」
+                  %time.time-date
+                    %i.far.fa-clock
+                    %span 2 日前
+                %i.fas.fa-chevron-right
+            %li.tab-content__ul__li
+              %a.tab-content__ul__li__a{:href => "#"}
+                %figure.tab-content__ul__li__a__figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                .mypage-item-body
+                  .mypage-item-body__text 事務局から個別メッセージ「【お詫び】本日お送りした「お知らせ」の不具合について」
+                  %time.time-date
+                    %i.far.fa-clock
+                    %span 2 日前
+                %i.fas.fa-chevron-right
+            %li.tab-content__ul__li
+              %a.tab-content__ul__li__a{:href => "#"}
+                %figure.tab-content__ul__li__a__figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                .mypage-item-body
+                  .mypage-item-body__text 事務局から個別メッセージ「【お詫び】本日お送りした「お知らせ」の不具合について」
+                  %time.time-date
+                    %i.far.fa-clock
+                    %span 2 日前
+                %i.fas.fa-chevron-right
+            %li.tab-content__ul__li
+              %a.tab-content__ul__li__a{:href => "#"}
+                %figure.tab-content__ul__li__a__figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                .mypage-item-body
+                  .mypage-item-body__text 事務局から個別メッセージ「【お詫び】本日お送りした「お知らせ」の不具合について」
+                  %time.time-date
+                    %i.far.fa-clock
+                    %span 2 日前
+                %i.fas.fa-chevron-right
+            %li.tab-content__ul__li
+              %a.tab-content__ul__li__a{:href => "#"}
+                %figure.tab-content__ul__li__a__figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                .mypage-item-body
+                  .mypage-item-body__text 事務局から個別メッセージ「【お詫び】本日お送りした「お知らせ」の不具合について」
+                  %time.time-date.time-date
+                    %i.far.fa-clock
+                    %span 2 日前
+                %i.fas.fa-chevron-right
+            %li.mypage-go-list
+              %a.mypage-go-list__a 一覧を見る
+      .mypage-tab-container
+        .mypage-tab-head
+          購入した商品
+        .mypage-tabs
+          %li.mypage-tabs__li
+            %h3.mypage-tabs__li__h3
+              %a.mypage-tabs__li__h3__a{"data-toggle" => "tab", :href => "#"}
+                取引中
+          %li.mypage-tabs__li
+            %h3.mypage-tabs__li__h3
+              %a.mypage-tabs__li__h3__a{"data-toggle" => "tab", :href => "#"}
+                過去の取引
+        .tab-content
+          取引中の商品がありません
+  
+
+
