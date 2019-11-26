@@ -6,75 +6,65 @@
       .mypage-nav
         %ul.ul-nav-list
           %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              マイページ
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              お知らせ
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              やることリスト
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              いいね！一覧
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              出品する
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              出品した商品 - 出品中
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              出品した商品 - 取引中
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              出品した商品 - 売却済み
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              購入した商品 - 取引中
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              購入した商品 - 過去の取引
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              ニュース一覧
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              評価一覧
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              ガイド
-            %i.fas.fa-chevron-right
-          %li.ul-nav-list__li
-            %a.ul-nav-list__li__a{:href => "#"}
-              お問い合わせ
-            %i.fas.fa-chevron-right
+            = link_to 'マイページ', '#', class: 'ul-nav-list__li__a'
 
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to 'お知らせ', '#', class: 'ul-nav-list__li__a'
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to 'やることリスト', '#', class: 'ul-nav-list__li__a'
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to 'いいね！一覧', '#', class: 'ul-nav-list__li__a'              
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to '出品する', '#', class: 'ul-nav-list__li__a'              
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to '出品した商品 - 出品中', '#', class: 'ul-nav-list__li__a'              
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to '出品した商品 - 取引中', '#', class: 'ul-nav-list__li__a'              
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to '出品した商品 - 売却済み', '#', class: 'ul-nav-list__li__a'              
+              
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to '購入した商品 - 取引中', '#', class: 'ul-nav-list__li__a'              
+              
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to '購入した商品 - 過去の取引', '#', class: 'ul-nav-list__li__a'              
+              
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to 'ニュース一覧', '#', class: 'ul-nav-list__li__a'              
+              
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to '評価一覧', '#', class: 'ul-nav-list__li__a'              
+              
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to 'ガイド', '#', class: 'ul-nav-list__li__a'              
+              
+            %i.fas.fa-chevron-right
+          %li.ul-nav-list__li
+            = link_to 'お問い合わせ', '#', class: 'ul-nav-list__li__a'              
+            %i.fas.fa-chevron-right
         .mypage-nav-head
           %h3
             メルペイ
         .mypage-nav-list
           %ul.ul-nav-list
             %li.ul-nav-list__li
-              %a.mypage-nav-list-item{:href => "#"}
-                売上・振込申請
+              = link_to ' 売上・振込申請', '#', class: 'mypage-nav-list-item'              
               %i.fas.fa-chevron-right
 
             %li.ul-nav-list__li 
-              %a.mypage-nav-list-item{:href => "#"}
-                ポイント
+              = link_to ' ポイント', '#', class: 'mypage-nav-list-item'                              
               %i.fas.fa-chevron-right
         .mypage-nav-head
           %h3
@@ -82,32 +72,25 @@
         .mypage-nav-list
           %ul.ul-nav-list
             %li.ul-nav-list__li 
-              %a.mypage-nav-list-item{:href => "#"}
-                プロフィール
+              = link_to 'プロフィール', '#', class: 'mypage-nav-list-item'              
               %i.fas.fa-chevron-right
             %li.ul-nav-list__li 
-              %a.mypage-nav-list-item{:href => "#"}
-                発送元・お届け先住所変更
+              = link_to '発送元・お届け先住所変更', '#', class: 'mypage-nav-list-item'              
               %i.fas.fa-chevron-right
             %li.ul-nav-list__li 
-              %a.mypage-nav-list-item{:href => "#"}
-                支払い方法
+              = link_to '支払い方法', '#', class: 'mypage-nav-list-item'              
               %i.fas.fa-chevron-right
             %li.ul-nav-list__li 
-              %a.mypage-nav-list-item{:href => "#"}
-                メール/パスワード
+              = link_to 'メール/パスワード', '#', class: 'mypage-nav-list-item'              
               %i.fas.fa-chevron-right
             %li.ul-nav-list__li 
-              %a.mypage-nav-list-item{:href => "#"}
-                本人情報
+              = link_to '本人情報', '#', class: 'mypage-nav-list-item'              
               %i.fas.fa-chevron-right
             %li.ul-nav-list__li 
-              %a.mypage-nav-list-item{:href => "#"}
-                電話番号の確認
+              = link_to '電話番号の確認', '#', class: 'mypage-nav-list-item'              
               %i.fas.fa-chevron-right
             %li.ul-nav-list__li 
-              %a.mypage-nav-list-item{:href => "#"}
-                ログアウト
+              = link_to 'ログアウト', '#', class: 'mypage-nav-list-item'              
               %i.fas.fa-chevron-right
 
     .l-content
@@ -115,7 +98,7 @@
       .mypage-user-icon
         %a.mypage-user-icon__a{:href => "#"}
           %figure.mypage-user-icon__a__figure
-            %img{:alt => "", :height => "60", :src => "//static.mercdn.net/thumb/members/159191531.jpg?1574387316", :width => "60"}/
+            =image_tag  "//static.mercdn.net/thumb/members/159191531.jpg?1574387316", size: "60x60"
           .mypage
             %h2.bold よし
             .mypage-number
@@ -128,17 +111,16 @@
       .mypage-tab-container-notification-todo
         .mypage-tabs
           %h3.mypage-tabs__h3
-            %a.mypage-tabs__h3__a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
-              お知らせ                
-          %h3.mypage-tabs__h3
-            %a.mypage-tabs__h3__a{"data-toggle" => "tab", :href => "#mypage-tab-notification"}
-              やることリスト   
+            = link_to 'お知らせ',data: {:toggle=>"tab", :href => "#"},:class=>"mypage-tabs__li__h3__a"                            
+          %h3.mypage-tabs__h3  
+            = link_to 'やることリスト',data: {:toggle=>"tab", :href => "#"},:class=>"mypage-tabs__li__h3__a"                            
+ 
         .tab-content
           %ul.tab-content__ul
             %li.tab-content__ul__li
-              %a.tab-content__ul__li__a{:href => "#"}
+              = link_to '#',class: "tab-content__ul__li__a"                            
                 %figure.tab-content__ul__li__a__figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                  =image_tag  "/logo_red.svg", :src => "//static.mercdn.net/images/mercari_profile.png", :class => "lazyloaded"
                 .mypage-item-body
                   .mypage-item-body__text 事務局から個別メッセージ「【お詫び】本日お送りした「お知らせ」の不具合について」
                   %time.time-date
@@ -146,9 +128,9 @@
                     %span 2 日前
                 %i.fas.fa-chevron-right
             %li.tab-content__ul__li
-              %a.tab-content__ul__li__a{:href => "#"}
+              = link_to '#',class: "tab-content__ul__li__a"                            
                 %figure.tab-content__ul__li__a__figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                  =image_tag  "/logo_red.svg", :src => "//static.mercdn.net/images/mercari_profile.png", :class => "lazyloaded"
                 .mypage-item-body
                   .mypage-item-body__text 事務局から個別メッセージ「【お詫び】本日お送りした「お知らせ」の不具合について」
                   %time.time-date
@@ -156,9 +138,9 @@
                     %span 2 日前
                 %i.fas.fa-chevron-right
             %li.tab-content__ul__li
-              %a.tab-content__ul__li__a{:href => "#"}
+              = link_to '#',class: "tab-content__ul__li__a"                            
                 %figure.tab-content__ul__li__a__figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                  =image_tag  "/logo_red.svg", :src => "//static.mercdn.net/images/mercari_profile.png", :class => "lazyloaded"
                 .mypage-item-body
                   .mypage-item-body__text 事務局から個別メッセージ「【お詫び】本日お送りした「お知らせ」の不具合について」
                   %time.time-date
@@ -166,9 +148,9 @@
                     %span 2 日前
                 %i.fas.fa-chevron-right
             %li.tab-content__ul__li
-              %a.tab-content__ul__li__a{:href => "#"}
+              = link_to '#',class: "tab-content__ul__li__a"                            
                 %figure.tab-content__ul__li__a__figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                  =image_tag  "/logo_red.svg", :src => "//static.mercdn.net/images/mercari_profile.png", :class => "lazyloaded"
                 .mypage-item-body
                   .mypage-item-body__text 事務局から個別メッセージ「【お詫び】本日お送りした「お知らせ」の不具合について」
                   %time.time-date
@@ -176,9 +158,9 @@
                     %span 2 日前
                 %i.fas.fa-chevron-right
             %li.tab-content__ul__li
-              %a.tab-content__ul__li__a{:href => "#"}
+              = link_to '#',class: "tab-content__ul__li__a"                            
                 %figure.tab-content__ul__li__a__figure
-                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
+                  =image_tag  "/logo_red.svg", :src => "//static.mercdn.net/images/mercari_profile.png", :class => "lazyloaded"
                 .mypage-item-body
                   .mypage-item-body__text 事務局から個別メッセージ「【お詫び】本日お送りした「お知らせ」の不具合について」
                   %time.time-date.time-date
@@ -186,18 +168,16 @@
                     %span 2 日前
                 %i.fas.fa-chevron-right
             %li.mypage-go-list
-              %a.mypage-go-list__a 一覧を見る
+              = link_to '一覧を見る','#', class:'mypage-go-list__a'
       .mypage-tab-container
         .mypage-tab-head
           購入した商品
         .mypage-tabs
           %li.mypage-tabs__li
             %h3.mypage-tabs__li__h3
-              %a.mypage-tabs__li__h3__a{"data-toggle" => "tab", :href => "#"}
-                取引中
+              = link_to '取引中',:data => {:toggle=>"tab", :href => "#"},:class=>"mypage-tabs__li__h3__a"
           %li.mypage-tabs__li
             %h3.mypage-tabs__li__h3
-              %a.mypage-tabs__li__h3__a{"data-toggle" => "tab", :href => "#"}
-                過去の取引
+              = link_to '過去の取引',:data => {:toggle=>"tab", :href => "#"},:class=>"mypage-tabs__li__h3__a"
         .tab-content
           取引中の商品がありません
