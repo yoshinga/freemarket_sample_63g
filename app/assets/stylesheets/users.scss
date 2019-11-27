@@ -1,0 +1,247 @@
+body{
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  background-color: #f5f5f5;
+};
+  .default-container{
+    .bread-crumbs{
+      width: 100%;
+      height: 49px;
+      background-color: #fff;
+      box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    };
+    .l-container{
+      display: flex;
+      margin: 0px 210px 0px 210px;
+      padding-bottom: 40px;
+      .l-side{
+        width: 280px;
+        margin-right: 40px;
+        margin-top: 0px;
+        .mypage-nav{
+          margin-top: 48px;
+          .mypage-nav-head{
+            h3{
+              font-size: 16px;
+              font-weight:bold;
+              color: #333;
+            }
+          }
+          .ul-nav-list{
+            .ul-nav-list__li  {
+              display: flex;
+              padding: 16px;
+              height: 16px;
+              width: 248px;
+              background-color: #fff;
+              border-bottom: 1px solid #f5f5f5;
+              cursor : pointer;
+              .fas.fa-chevron-right{
+
+                margin-left: auto;
+              };
+              
+            };
+            
+            a:hover{
+              padding: 0 8px 0 0;
+            }
+            a{
+              text-decoration: none;
+              color: #333;
+              touch-action: manipulation;
+
+
+              line-height: 15px;
+            }
+            i{
+              color: #ccc;
+            }
+            
+          };
+          &-head{
+            margin-top: 40px;
+          };
+        };
+      };
+      .l-content{
+        width: calc(100% - 280px);
+        .mypage-user-icon{
+          width: calc(100% - 40px);
+          height: 160px;
+          padding: 20px;
+          background-color: #fff;
+          margin-top: 48px;
+          &__a{
+            width: 100%;
+            height: 100%;
+            float: left;
+            text-decoration: none;
+            &__figure{
+              width: 60px;
+              height: 60px;
+              margin: 0 auto;
+              margin-top: 30px;
+              img{
+              border-radius: 50%;
+              }
+            }
+            .mypage{
+              text-align: center;              
+              color: #333;
+            }
+            
+            .mypage-number{
+              justify-content: space-around;
+              &__bold{
+                display: inline;
+              }
+            }
+          }
+        }
+        .mypage-tab-container-notification-todo{
+          background-color: #f1f1f1;
+          width: 100%;
+          .mypage-tabs{
+            width: 700px;
+            height: 72px;
+            background-color: #eee;
+            display: flex;
+            
+            &__h3{
+              text-align: center;
+              line-height: 72px;
+              width: 350px;
+              height: 72px;
+              &__a{
+              text-decoration: none;
+              color: #333;
+              font-size: 16px;
+              font-weight: bold;
+              }
+              };
+            };
+            .tab-content{
+              &__ul{
+                &__li{
+                 background-color: #fff;
+                 border-bottom: 1px solid #f5f5f5;
+                  &__a{
+                    display: flex;
+                    width: 668px;
+                    height: 48px;
+                    padding: 16px;
+                    text-decoration: none;
+                    color: #333;
+                    &__figure{
+                      width: 48px;
+                      height: 48px;
+                      margin: 0;
+                      .lazyloaded{
+                        width: 48px;
+                        height: 48px;
+                        background-color: gray;
+                      };
+                      i{
+
+
+                        height: 20px;
+                      }
+                    };
+                    .mypage-item-body{
+                      margin: 0 40px 0 38px;
+                      &__text{
+                        text-decoration: none;
+                      };
+                      
+                    };
+                    .time-date{
+                      color: #888;
+                    }
+                    .icon-arrow-right{
+
+                    };
+                  };
+                };
+                .mypage-go-list{
+                  width: 668px;
+                    height: 56px;
+                    padding: 16px;
+                    text-decoration: none;
+                    background-color: #fff;
+                  &__a{
+                    width: 100%;
+                    height: 56px;
+                    background-color: #eee;
+                    text-align: center;
+                    line-height: 56px;
+                    display: inline-block;
+                    text-decoration: none;
+                    color: #333;
+
+
+                  };
+                };
+              };
+
+            }
+          };
+        .mypage-tab-container{
+          margin-top: 40px;
+          width: 100%;
+          height: 382px;
+          background-color: #fff;
+          .mypage-tab-head{
+            width: 668px;
+            height: 72px;
+            padding: 0 16px 0 16px;
+            background-color: #fff;
+            line-height: 72px;
+            font-weight: bold;
+            color: #333;
+
+          };
+          .mypage-tabs{
+            width: 100%;
+            height: 72px;
+            display: flex;
+            text-decoration: none;  
+
+            .mypage-tabs__li{
+              width: 350px;
+              height: 72px;
+              list-style: none;
+              background-color: #fff;
+
+              &__h3{
+                text-align: center;
+                background-color: #eee;
+                a{
+                  text-decoration: none; 
+                  line-height: 72px;
+                  font-weight: bold;
+                  color: #333;
+                };
+              };
+            };
+          };
+          .tab-content{
+            width: 100%;
+            height: 250px;
+            background-image: url("/logo_gray.svg");
+            line-height: 250px;
+            text-align: center;
+            font-weight: bold;
+            background-repeat: no-repeat;
+            background-size: 78px 85px;
+            background-position: center 40px; 
+            color: #ccc;
+
+          }
+        };
+        
+      };
+      
+    }
+  };
+  
