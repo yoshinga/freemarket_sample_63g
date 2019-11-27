@@ -13,7 +13,6 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1' 
-
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
                   keys: ['~/.ssh/g-team.pem'] 
@@ -31,4 +30,20 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+
+  desc 'upload master.key'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      # upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
+      upload!('config/master.key', "#{shared_path}/config/master.key")
+    end
+  end
+  before :starting, 'deploy:upload'
+  after :finishing, 'deploy:cleanup'
 end
+
+# secrets.yml用のシンボリックリンクを追加
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
