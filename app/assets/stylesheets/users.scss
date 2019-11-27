@@ -28,7 +28,7 @@ body{
             }
           }
           .ul-nav-list{
-            .ul-nav-list__li  {
+            &__li  {
               display: flex;
               padding: 16px;
               height: 16px;
