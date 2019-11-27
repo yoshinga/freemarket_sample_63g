@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "view#index"
   devise_for :users 
 
-  resources :yourpages, only: [:index]
+  resources :mypages, only: [:index]
  
   resources :signup do
       collection do
