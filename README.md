@@ -32,7 +32,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |Postal_code|integer|null: false|
-|Prefecture|string|null: false|
+|Prefecture|references||
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string||
@@ -40,6 +40,18 @@
 
 ### Association
 - has_one :user
+- has_one :porefecture
+
+
+## prefecturesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+
+### Association
+- has_one :adress
+
 
 
 ## itemsテーブル
