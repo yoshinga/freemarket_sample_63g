@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :mypages, only: [:index]
  
+  resources :logout, only: [:index]
+
   resources :signup do
       collection do
         get 'registration'
