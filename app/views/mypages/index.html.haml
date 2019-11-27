@@ -1,0 +1,71 @@
+.l-content
+  .wrap
+    %h2.wrap__title
+      本人情報の登録
+    .wrap__contents
+      = form_for '' do |f|
+        %p.wrap__contents__form__description
+          お客様の本人情報をご登録ください。
+          %br
+          登録されたお名前&ensp;&middot;&ensp;生年月日を変更する場合、本人確認書類の提出が必要になります。
+        %p.wrap__contents__form__description-2
+          %a.wrap__contents__form__description-2__link
+            本人確認書類のアップロードについて&ensp;&gt;
+        .wrap__contents__form__groups
+          %label.wrap__contents__form__groups__labels
+            お名前
+          %p.wrap__contents__form__groups__user-info
+            デュフフ
+        .wrap__contents__form__groups
+          %label.wrap__contents__form__groups__labels
+            お名前カナ
+          %p.wrap__contents__form__groups__user-info
+            デュフフ
+        .wrap__contents__form__groups
+          %label.wrap__contents__form__groups__labels
+            生年月日
+          %p.wrap__contents__form__groups__user-info
+            ﾃﾞｭﾌﾌ&#047;ﾃﾞｭﾌﾌ&#047;ﾃﾞｭﾌﾌ
+        .wrap__contents__form__groups
+          %label.wrap__contents__form__groups__labels
+            郵便番号
+            %span.wrap__contents__form__groups__labels__add-info
+              任意
+          .wrap__contents__form__groups__div-for-input
+            %input.wrap__contents__form__groups__div-for-input__content{type: "text", placeholder: "例) 123456"}
+        .wrap__contents__form__groups
+          %label.wrap__contents__form__groups__labels
+            都道府県
+            %span.wrap__contents__form__groups__labels__add-info
+              任意
+          .wrap__contents__form__groups__div-for-select
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--"
+            .fas.fa-angle-down.wrap__contents__form__groups__div-for-select__icon
+        .wrap__contents__form__groups
+          %label.wrap__contents__form__groups__labels
+            市区町村
+            %span.wrap__contents__form__groups__labels__add-info
+              任意
+          .wrap__contents__form__groups__div-for-input
+            %input.wrap__contents__form__groups__div-for-input__content{type: "text", placeholder: "例) デュフフ市デュフフ区デュフフ町"}
+        .wrap__contents__form__groups
+          %label.wrap__contents__form__groups__labels
+            番地
+            %span.wrap__contents__form__groups__labels__add-info
+              任意
+          .wrap__contents__form__groups__div-for-input
+            %input.wrap__contents__form__groups__div-for-input__content{type: "text", placeholder: "例) デュフ-ﾃﾞｭﾌ-ﾃﾞｭﾌﾌ"}
+        .wrap__contents__form__groups
+          %label.wrap__contents__form__groups__labels
+            建物名
+            %span.wrap__contents__form__groups__labels__add-info
+              任意
+          .wrap__contents__form__groups__div-for-input
+            %input.wrap__contents__form__groups__div-for-input__content{type: "text", placeholder: "例) デュフフビル"}
+        .wrap__contents__form__groups
+          .wrap__contents__form__groups__div-for-submit
+            %button.wrap__contents__form__groups__div-for-submit__content{type: "submit"}
+              登録する
+        %p.wrap__contents__form__description-2.wrap__contents__form__groups
+          %a.wrap__contents__form__description-2__link
+            本人情報の登録について&ensp;&gt;
