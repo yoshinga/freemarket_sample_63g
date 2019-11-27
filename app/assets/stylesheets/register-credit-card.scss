@@ -1,0 +1,47 @@
+.wrap {
+  height: 1500px;
+  width: 650px;
+  margin: 0 auto;
+  &__main {
+    padding: 60px;
+    &__heading {
+      padding-left: 120px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    &__wrap {
+      padding: 30px;
+      border-bottom: 2px solid #e4e3e3;
+      &__button {
+        cursor: pointer;
+        margin: 0 auto;
+        width: 300px;
+        height: 50px;
+        background: #e04646;
+        border-style: none;
+        display: flex;
+        align-items: center;
+        &__icon {
+          font-size: 15px;
+          color: #fff;
+          margin-left: 20px;
+        }
+        &__p {
+          font-weight: bold;
+          font-size: 15px;
+          color: #fff;
+          margin-left: 20px;
+        }
+      }
+    }
+    &__p {
+      text-align: right;
+      color: #148cd4;
+      cursor: pointer;
+      margin-top: 20px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
