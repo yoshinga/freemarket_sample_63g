@@ -12,7 +12,7 @@ body{
     };
     .l-container{
       display: flex;
-      margin: 0px 210px 0px 210px;
+      margin: 0 210px 0px 210px;
       padding-bottom: 40px;
       .l-side{
         width: 280px;
@@ -65,6 +65,7 @@ body{
         };
       };
       .l-content{
+        margin-top: 48px;
         width: calc(100% - 280px);
         .mypage-user-icon{
           width: calc(100% - 40px);

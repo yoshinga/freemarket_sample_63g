@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :mypages, only: [:index] do
     collection do
       get 'card' # マイページ内のクレジットカード登録画面だよん
+      get 'profile' # ユーザのプロフィール変更画面だよん
     end
   end
  

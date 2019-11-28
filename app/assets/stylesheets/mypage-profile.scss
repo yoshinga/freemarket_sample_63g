@@ -1,0 +1,53 @@
+.wrap {
+  // .wrapのレイアウト指定はregister-credit-card.scssファイルに記載されています。
+  &__heading {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px 20px;
+  }
+  &__form {
+    &__bg-image {
+      background-image: url("profileBGImage.jpg");
+      background-position: center;
+      width: 100%;
+      height: 150px;
+      padding: 60px 20px 30px;
+      box-sizing: border-box;
+      display: flex;
+      &__user-icon {
+        margin-left: 150px;
+        border-radius: 50%;
+      }
+      &__user-name {
+        margin-top: 5px;
+        margin-left: 20px;
+        padding: 10px 10px;
+        height: 50px;
+        width: 200px;
+        border-radius: 5px;
+        border: 2px solid #ccc1c1;
+        box-sizing: border-box;
+        font-size: 20px;
+      }
+    }
+    &__bottom-content {
+      padding: 40px 16px;
+      &__profile-sentence {
+        box-sizing: border-box;
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+        font-size: 15px;
+      }
+      &__button {
+        margin-top: 16px;
+        width: 100%;
+        height: 50px;
+        border-style: none;
+        background: red;
+        color: white;
+      }
+    }
+  }
+}
