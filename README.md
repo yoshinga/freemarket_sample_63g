@@ -75,6 +75,7 @@
 - belongs_to :category
 - belongs_to :user
 - belongs_to :todo
+- has_many :items
 - has_many :comments, dependent: :destroy
 - has_many :favorite, dependent: :destroy
 - has_many :evalution, dependent: :destroy
@@ -87,7 +88,7 @@
 |item_id|string||
 |url|string||
 ### Association
-- has_many :items
+- belongs_to :items
 
 ## categoriesテーブル
 |Column|Type|Options|

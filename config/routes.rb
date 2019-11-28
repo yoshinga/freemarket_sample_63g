@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root "view#index"
   devise_for :users 
-  
+
   resources :users, only: [:index, :edit, :update]
 
   resources :mypages, only: [:index] do
