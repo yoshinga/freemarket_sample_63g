@@ -2,10 +2,11 @@ class ViewController < ApplicationController
 
   def index
     @items = Item.all
+    # @item = @items.images
   end
 
-  private
+ private
  def view_params
-  params.require().permit()
+  params.require(:user).permit()
  end
 end
