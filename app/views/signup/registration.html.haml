@@ -29,26 +29,26 @@
       %b 会員情報入力
     .signup-contents-box
       .signup-contents-box-inner
-        = form_with class: :tel_class do |form| 
+        = form_for @user, url: sms_confirmation_signup_index_path, method: :post, html:{ class: :tel_class } do |f|
           .signup-contents-box-inner__field
             %b ニックネーム 
             %span.red-mini 必須
-            = form.text_field :text, class: 'input-field', placeholder: "   例）メルカリ太郎"
+            = f.text_field :nickname, class: 'input-field', placeholder: "   例）メルカリ太郎"
           .signup-contents-box-inner__field
             %b メールアドレス
             %span.red-mini 必須
-            = form.text_field :text, class: 'input-field', placeholder: "   PC・携帯どちらでも可"
+            = f.text_field :email, class: 'input-field', placeholder: "   PC・携帯どちらでも可"
           .signup-contents-box-inner__field
             %b パスワード
             %span.red-mini 必須
-            = form.text_field :text, class: 'input-field', placeholder: "   6文字以上"
+            = f.text_field :password, class: 'input-field', placeholder: "   6文字以上"
           .signup-contents-box-inner__field
             %b パスワード (確認)
             %span.red-mini 必須
-            = form.text_field :text, class: 'input-field', placeholder: "   6文字以上"
+            = f.text_field :password_confirmation, class: 'input-field', placeholder: "   6文字以上"
           .signup-contents-box-inner__field
             = image_tag('/image.png', size: "340x100")
-          .signup-contents-box-inner__btn 
-            = form.submit "次へ進む", class: 'signup-contents-box-inner__btn--red'
+          .signup-contents-box-inner__btn
+            = f.submit "次へ進む", class: 'signup-contents-box-inner__btn--red'
 
 = render partial: "shared/signup-footer"
