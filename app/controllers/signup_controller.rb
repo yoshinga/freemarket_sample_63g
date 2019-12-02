@@ -33,7 +33,7 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
-      render '/signup/registration'
+      render registration_signup_index_path
     end
       
   end
@@ -65,7 +65,7 @@ class SignupController < ApplicationController
       year: "23",
       code: "012"
     )
-    render '/signup/registration' unless @user.valid? #仮で作成したインスタンスのバリデーションチェック
+    render registration_signup_index_path, unless @user.valid? #仮で作成したインスタンスのバリデーションチェック
   end
 
   def address_validates
@@ -103,7 +103,7 @@ class SignupController < ApplicationController
         house_number: session[:house_number],
         building_name: session[:building_name]
       )
-      render '/signup/address' unless @user.valid? && @address.valid?
+      render address_signup_index_path, unless @user.valid? && @address.valid?
   end
 
   def credit_card_validates
@@ -127,7 +127,7 @@ class SignupController < ApplicationController
       year: session[:year],
       code: session[:code]
       )
-      render '/signup/credit_card' unless @user.valid?
+      render credit_card_signup_index_path, unless @user.valid?
   end
 
   private
