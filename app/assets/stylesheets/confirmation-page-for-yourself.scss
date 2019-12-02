@@ -1,0 +1,97 @@
+.wrap {
+  width: 650px;
+  margin: 0;
+  background: white;
+  &__title {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px 20px;
+    border-bottom: 2px solid #e4e3e3;
+  }
+  &__contents {
+    padding: 60px;
+    &__form {
+      &__description {
+        margin-top: 5px;
+      }
+      &__description-2 {
+        margin-top: 5px;
+        text-align: right;
+        color: #10b3da;
+        &__link {
+        }
+      }
+      &__groups {
+        margin-top: 40px;
+        &__labels {
+          display: block;
+          font-weight: bold;
+          font-size: 15px;
+          &__add-info {
+            margin-left: 10px;
+            background: #cec0c0;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+          }
+        }
+        &__user-info {
+          margin-top: 8px;
+          font-size: 15px;
+        }
+        &__div-for-input {
+          margin-top: 10px;
+          text-align: center;
+          &__content {
+            padding: 10px 20px;
+            height: 20px;
+            width: 450px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+          }
+        }
+        &__div-for-submit {
+          text-align: center;
+          margin-top: 10px;
+          &__content{
+            height: 40px;
+            width: 490px;
+            background: red;
+            color: #fff;
+            border-style: none;
+          }
+        }
+        &__div-for-select {
+          text-align: center;
+          position: relative;
+          margin-top: 8px;
+          &__content {
+            height: 30px;
+            width: 450px;
+          }
+          &__icon {
+            position: absolute;
+            left: 495px;
+            top: 12px;
+            z-index: 2;
+            color: #888;
+            font-size: 20px;
+            background-color: white;
+          }
+        }
+    }
+    
+  }
+}
+}
+
+select {
+  box-sizing: border-box;
+  width: 490px;
+  height: 40px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+}

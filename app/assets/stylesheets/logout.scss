@@ -1,0 +1,17 @@
+.background-wrap {
+  background: white;
+  height: 200px;
+  width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  &__logout-button {
+    height: 50px;
+    background: red;
+    color: white;
+    width: 50%;
+    border-style: none;
+    cursor: pointer;
+    margin-top: 75px;
+    font-size: 15px;
+  }
+}
