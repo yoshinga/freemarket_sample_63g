@@ -74,3 +74,7 @@ gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'active_hash'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'pry-rails'
+gem "jquery-rails"
