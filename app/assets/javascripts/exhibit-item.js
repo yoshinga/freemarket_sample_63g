@@ -10,7 +10,6 @@ $(document).on("turbolinks:load", function() {
     let finishedToCalc = Math.round(sellPrice * 0.1);
     return finishedToCalc;
   }
-  
 
   // 販売利益の計算
   let calcSelesProfit = (sellPrice, Commission) => {

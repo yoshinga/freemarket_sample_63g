@@ -9,7 +9,6 @@ $(document).on("turbolinks:load", function() {
     let inputTag = `
                   <input class="items-contents__box__image__upload__image-label__file-field" type="file" name="item[images_attributes][${count}][url]" id="item_images_attributes_${count}_url">
                 ` 
-
     parentOfInputTag.append(inputTag);
   }
 
