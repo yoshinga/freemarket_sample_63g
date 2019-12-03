@@ -44,7 +44,7 @@
               名前
           .items-contents__box__buy-user__inner__change
             = link_to '#' do
-              .items-contents__box__buy-user__inner__change__sentence
+              %a.items-contents__box__buy-user__inner__change__sentence
                 変更する >
 
       .items-contents__box__pay-method
@@ -59,6 +59,6 @@
           = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1855818912', height: '40', width: '37', class: '.credit-img'
           .items-contents__box__pay-method__inner__change
             = link_to '#' do
-              %p.items-contents__box__pay-method__inner__change__sentence
+              %a.items-contents__box__pay-method__inner__change__sentence
                 変更する >
 = render partial: "shared/signup-footer"
