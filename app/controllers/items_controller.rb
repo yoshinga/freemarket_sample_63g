@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only:[:show]
-
+  before_action :set2_item, only:[:destroy]
+  
   def new
   end
   
@@ -8,19 +9,21 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    begin
-      item = Item.find(params[:id])
-      item.destroy
-    rescue => e
-      Rails.logger.debug e.message
+    if set2_item.destroy
+      redirect_to mypages_path
+    else
+      redirect_to "/items/#{@item.id}"
     end
-    redirect_to mypages_path
   end
 
   private
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set2_item
+    item = Item.find(params[:id])
   end
 
 end
