@@ -21,7 +21,7 @@ label{
     width:700px;
     margin: 0 auto;
     background-color: #fff;
-    .items-contents__message {
+    &__message {
       padding: 16px;
       font-size:22px;
       text-align: center;
@@ -102,7 +102,7 @@ label{
         }
       }
 
-      .items-contents__box__buy-user{
+      &__buy-user{
         margin: 40px 0 0;
         padding: 24px 12.5% 0;
         border-top: 1px solid #f5f5f5;
@@ -130,7 +130,7 @@ label{
         }
       }
 
-      .items-contents__box__pay-method{
+      &__pay-method{
         padding: 24px 12.5% 25px;
         margin: 40px 0 0;
         border-top: 1px solid #f5f5f5;
