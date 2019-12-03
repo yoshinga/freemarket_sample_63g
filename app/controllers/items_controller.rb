@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:show]
+  before_action :set_item, only:[:show, :destroy]
   
   def new
   end
@@ -8,11 +8,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    if item.destroy
+    if @item.destroy
       redirect_to mypages_path
     else
-      redirect_to "/items/#{@item.id}"
+      redirect_to item_path
     end
   end
 
