@@ -25,14 +25,8 @@ $(document).on("turbolinks:load", function() {
 
     } else {
 
-      
-
     }
 
-    
-
-
   });
-
 
 });
