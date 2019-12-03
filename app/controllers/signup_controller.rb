@@ -7,6 +7,7 @@ class SignupController < ApplicationController
   end
 
   def sms_confirmation
+    binding.pry
     session[:user_params_step1] = user_params #受け取った値を:user_params_step1に代入
     @user = User.new                          #新規インスタンス作成
   end
@@ -39,7 +40,7 @@ class SignupController < ApplicationController
   end
 
   def done
-    sign_in User.find(session[:id]) unless user_signed_in?
+      sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   def registration_validates #registrationで入力された情報のバリデーションチェックをするためのアクション
@@ -66,6 +67,7 @@ class SignupController < ApplicationController
       code: "012"
     )
     render registration_signup_index_path, unless @user.valid? #仮で作成したインスタンスのバリデーションチェック
+    end
   end
 
   def address_validates
@@ -103,7 +105,8 @@ class SignupController < ApplicationController
         house_number: session[:house_number],
         building_name: session[:building_name]
       )
-      render address_signup_index_path, unless @user.valid? && @address.valid?
+        render address_signup_index_path, unless @user.valid? && @address.valid?
+    end
   end
 
   def credit_card_validates
@@ -127,7 +130,8 @@ class SignupController < ApplicationController
       year: session[:year],
       code: session[:code]
       )
-      render credit_card_signup_index_path, unless @user.valid?
+        render credit_card_signup_index_path, unless @user.valid?
+    end
   end
 
   private
@@ -155,7 +159,5 @@ class SignupController < ApplicationController
       :house_number, 
       :building_name
       ])
-
   end
-
 end
