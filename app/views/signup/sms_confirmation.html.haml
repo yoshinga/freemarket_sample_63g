@@ -29,19 +29,19 @@
       %b 電話登録の確認
     .signup-contents-box
       .signup-contents-box-inner
-        = form_with model: @user, class: :tel_class do |form| 
+        = form_for @user, url: address_signup_index_path, method: :post, html: { class: :tel_class } do |f| 
           .signup-contents-box-inner__field
             %b 携帯電話の番号 
             %br
-            = form.text_field :text, class: 'input-field', placeholder: "    携帯電話の番号を入力"
+            = f.text_field :telephone_number, class: 'input-field', placeholder: "    携帯電話の番号を入力"
           .signup-contents-box-inner-form
             %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
           .signup-contents-box-inner__btn
-            = form.submit "SNSを送信する", class: 'signup-contents-box-inner__btn--red'
+            = f.submit "SNSを送信する", class: 'signup-contents-box-inner__btn--red'
           .signup-contents-box-inner-form
             %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
           .signup-contents-box-inner-form
-            = link_to '#', class: 'help_center' do
+            = link_to '/', class: 'help_center' do
               電話番号の確認が必要な理由 
               %b＞
 

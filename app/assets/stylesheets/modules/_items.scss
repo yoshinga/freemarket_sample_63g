@@ -7,6 +7,7 @@ label{
 .first-items-header {
   height: 120px;
   background-color: #F5F5F5;
+
   &__logo {
     font-family: 'arial black';
     line-height: 120px;
@@ -15,6 +16,7 @@ label{
 }
 .items-main{
   background-color: #F5F5F5;
+
   .items-contents{
     width:700px;
     margin: 0 auto;
@@ -31,11 +33,13 @@ label{
       font-size:22px;
       text-align: center;
       border: solid 1px #F5F5F5;
+
     }
     &__box{
       padding-top: 40px;
       font-size: 14px;
       border: solid 1px #F5F5F5;
+
       &__image{
         padding: 0 0 40px;
         &__text{
@@ -50,6 +54,7 @@ label{
           background: #F5F5F5;
           height: 162px;
           width : 90%;
+
           box-sizing: border-box;
           display: flex;
           justify-content: center;
@@ -111,6 +116,7 @@ label{
       &__detail{
         padding: 40px;
         border-top: 1px solid #F5F5F5;
+
         height: 180px;
         &__head{
           float: left;
@@ -142,6 +148,7 @@ label{
       &__send{
         padding: 40px;
         border-top: 1px solid #F5F5F5;
+
         height: 300px;
         &__head{
           float: left;
@@ -153,6 +160,7 @@ label{
             height: 14px;
             border-radius: 50%;
             background: #0099E8;
+
             color: #fff;
             line-height: 14px;
             font-size: 12px;
@@ -192,6 +200,7 @@ label{
       &__price{
         padding: 40px;
         border-top: 1px solid #F5F5F5;
+
         height: 230px;
         &__head{
           float: left;
@@ -203,6 +212,7 @@ label{
             height: 14px;
             border-radius: 50%;
             background: #0099E8;
+
             color: #fff;
             line-height: 14px;
             font-size: 12px;
@@ -271,6 +281,7 @@ label{
           margin: 40px 0 0;
           background: #EA352D;
           border: 1px solid #EA352D;
+
           color: #fff;
           display: block;
           width: 100%;
@@ -295,3 +306,4 @@ label{
     }
   }
 }
+
