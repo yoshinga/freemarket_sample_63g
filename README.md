@@ -32,7 +32,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |Postal_code|integer|null: false|
-|Prefecture|references||
+|Prefecture|references|foreign_key: true|
 |city|string|null: false|
 |house_number|string|null: false|
 |building_name|string||
@@ -40,18 +40,7 @@
 
 ### Association
 - has_one :user
-- has_one :porefecture
-
-
-## prefecturesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-
-### Association
-- has_one :adress
-
+- belongs_to_active_hash :prefecture
 
 
 ## itemsテーブル
@@ -59,10 +48,9 @@
 |------|----|-------|
 |item_name|string|null: false, add_index: true|
 |discription|text||
-|image|references|foreign_key: true|
 |user|references|foreign_key: true|
 |category|references|foreign_key: true|
-|evalution|references|foreign_key: true|
+|evaluation|references|foreign_key: true|
 |brand|references|foreign_key: true|
 |condition|string||
 |price|integer|null: false|
@@ -71,6 +59,7 @@
 |item_status|integer||
 |buyer|references|foreign_key: true|
 |seller|references|foreign_key: true|
+|Prefecture_send|references|foreign_key: true|
 ### Association
 - belongs_to :category
 - belongs_to :user
@@ -81,11 +70,12 @@
 - has_many :evalution, dependent: :destroy
 - belongs_to :user, foreign_key: :buyer_id
 - belongs_to :user, foreign_key: :seller_id
+- belongs_to_active_hash :prefecture
 
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|string||
+|item|references|foreign_key: true|
 |url|string||
 ### Association
 - belongs_to :item
