@@ -11,7 +11,6 @@ $(document).on("turbolinks:load", function() {
     return finishedToCalc;
   }
 
-
   // 販売利益の計算
   let calcSelesProfit = (sellPrice, Commission) => {
     let finishedCalc = sellPrice - Commission
@@ -38,6 +37,5 @@ $(document).on("turbolinks:load", function() {
     }
 
   });
-
-
 }); 
+
