@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:show, :destroy]
-  
+before_action :set_item, only:[:show, :destroy]
+  def index
+    @items = Item.all
+  end
+
   def new
     @item = Item.new
     @item.images.build
@@ -46,3 +49,4 @@ class ItemsController < ApplicationController
   end
   
 end
+
