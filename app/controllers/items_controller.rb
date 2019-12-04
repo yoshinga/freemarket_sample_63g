@@ -15,6 +15,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def destroy
+    if @item.destroy
+      redirect_to mypages_path
+    else
+      redirect_to item_path
+    end
+  end
+
   private
 
   def exhibit_item_params
@@ -29,22 +40,9 @@ class ItemsController < ApplicationController
       images_attributes: [:url]
     )
   end
-  
-  def show
-  end
-
-  def destroy
-    if @item.destroy
-      redirect_to mypages_path
-    else
-      redirect_to item_path
-    end
-  end
-
-  private
 
   def set_item
     @item = Item.find(params[:id])
   end
-
+  
 end
