@@ -8,7 +8,7 @@ class Address < ApplicationRecord
   validates :house_number,       presence: true
   # validates :building_name     
   # validates :user_id,            foreign_key: true
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture
-
+  # extend ActiveHash::Associations::ActiveRecordExtensions
+  # belongs_to_active_hash :prefecture
+  # delegate :name, to: :prefecture
 end
