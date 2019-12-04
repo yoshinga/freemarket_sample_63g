@@ -23,8 +23,8 @@
         ブランドから探す
     .header__bottom-list__rigth
       .header__bottom-list__rigth__sign-up
-        %a.header__bottom-list__rigth__sign-up__link
+        =link_to new_user_registration_path, class:"header__bottom-list__rigth__sign-up__link" do
           新規登録
       .header__bottom-list__rigth__log-in
-        %a.header__bottom-list__rigth__log-in__link
+        =link_to new_user_session_path, class:"header__bottom-list__rigth__log-in__link" do
           ログイン
