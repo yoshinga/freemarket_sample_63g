@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:show, :destroy]
+  before_action :set_item, only:[:destroy]
   
+
   def new
     @item = Item.new
     @item.images.build
@@ -17,6 +18,7 @@ class ItemsController < ApplicationController
 
   def show 
   end
+
 
   def destroy
     if @item.destroy
