@@ -1,5 +1,10 @@
-.l-content
-  .background-wrap
-    %button.background-wrap__logout-button{href: '/users/sign_out'}
-      ログアウト
+.default-container
+  .bread-crumbs
+  .l-container
+    = render "shared/mypage_side_bar"
+    .l-content
+      .background-wrap
+        .background-wrap__logout-button
+          =link_to destroy_user_session_path, method: :delete do
+            ログアウト
     
