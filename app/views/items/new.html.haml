@@ -1,11 +1,12 @@
-.first-items-header
+.items-contents.first-items-header
   .first-items-header__logo
     = link_to image_tag("/fmarket_logo_red.svg",size: "200x120"), ""
 .items-main
   = form_with(model: @item, class: "items-contents") do |f|
-    .items-contents__message 
+    .items-contents__message
       %h.items-contents__message__heading
         商品の情報を入力
+
     .items-contents__box
       .items-contents__box__image
         .items-contents__box__image__text
@@ -20,13 +21,13 @@
           = f.fields_for :images do |image|
             = image.label :url, "ドラッグアンドドロップまたはクリックしてファイルをダウンロード", class: "items-contents__box__image__upload__image-label"
             = image.file_field :url, class: "items-contents__box__image__upload__image-label__file-field"
-
       .items-contents__box__item
         .items-contents__box__item__name
           %label
-            %h 
+            %h
               商品名
-          %span.red-mini 
+          %span.red-mini
+
             必須
           .items-contents__box__item__name__text
             = f.text_field :item_name, class: 'items-contents__box__item__name__text__box', placeholder: '商品名（必須40時まで）'
@@ -34,6 +35,7 @@
           %label
             %h1
               商品の説明
+
           %span.red-mini 
             必須
           .items-contents__box__item__description__text
@@ -43,16 +45,19 @@
         .items-contents__box__detail__head
           %h1
             商品の詳細
+
         .items-contents__box__detail__box
           .items-contents__box__detail__box__category
             %label
               カテゴリー
+     %span.red-mini
               %span.red-mini 
                 必須
           %select.box-category{value:"--"}
           .items-contents__box__detail__box__status
             %label
               商品の状態
+
             %span.red-mini 
               必須
           = f.collection_select :condition_id , Condition.all, :id, :name, {prompt: true}, {class: "box-category"}
