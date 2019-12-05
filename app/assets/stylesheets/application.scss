@@ -10,8 +10,16 @@
 @import "font-awesome";
 @import "users";
 @import "item-exhibit-icon";
+@import "modules/items.show";
 @import "bottom-image";
 @import "confirmation-page-for-yourself";
 @import "logout";
 @import "register-credit-card";
 @import "mypage-profile";
+
+@import "modules/items";
+
+
+// アイテム出品の複数画像投稿で使うレイアウト
+@import "use-for-js";
+

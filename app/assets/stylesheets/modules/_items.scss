@@ -4,19 +4,19 @@ div{
 label{
   display: inline-block;
 }
-
 .first-items-header {
   height: 120px;
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
+
   &__logo {
     font-family: 'arial black';
     line-height: 120px;
     text-align: center;
   }
 }
-
 .items-main{
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
+
   .items-contents{
     width:700px;
     margin: 0 auto;
@@ -32,12 +32,14 @@ label{
       padding: 40px;
       font-size:22px;
       text-align: center;
-      border: solid 1px #f5f5f5;
+      border: solid 1px #F5F5F5;
+
     }
     &__box{
       padding-top: 40px;
       font-size: 14px;
-      border: solid 1px #f5f5f5;
+      border: solid 1px #F5F5F5;
+
       &__image{
         padding: 0 0 40px;
         &__text{
@@ -49,22 +51,29 @@ label{
         &__upload{
           border: 1px dashed #ccc;
           margin: 0 auto;
-          background: #f5f5f5;
+          background: #F5F5F5;
           height: 162px;
-          width : 620px;
-          padding: 40px;
+          width : 90%;
+
           box-sizing: border-box;
           display: flex;
           justify-content: center;
           align-items: center;
-          .image-text{
+          &__image-label{
             text-align: center;
+            width: 100%;
+            height: 100%;
+            padding-top: 70px;
+            box-sizing: border-box;
+            font-weight: bold;
+            &__file-field {
+              display: none;
+            }
           }
         }
       }
-
       &__item{
-        border-top: 1px solid #f5f5f5;
+        border-top: 1px solid #F5F5F5;
         height: 355px;
         width: 620px;
         padding: 40px;
@@ -104,10 +113,10 @@ label{
           }
         }
       }
-
       &__detail{
         padding: 40px;
-        border-top: 1px solid #f5f5f5;
+        border-top: 1px solid #F5F5F5;
+
         height: 180px;
         &__head{
           float: left;
@@ -136,10 +145,10 @@ label{
           }
         }
       }
-
       &__send{
         padding: 40px;
-        border-top: 1px solid #f5f5f5;
+        border-top: 1px solid #F5F5F5;
+
         height: 300px;
         &__head{
           float: left;
@@ -150,7 +159,8 @@ label{
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background: #0099e8;
+            background: #0099E8;
+
             color: #fff;
             line-height: 14px;
             font-size: 12px;
@@ -187,10 +197,10 @@ label{
           }
         }
       }
-
       &__price{
         padding: 40px;
-        border-top: 1px solid #f5f5f5;
+        border-top: 1px solid #F5F5F5;
+
         height: 230px;
         &__head{
           float: left;
@@ -201,7 +211,8 @@ label{
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background: #0099e8;
+            background: #0099E8;
+
             color: #fff;
             line-height: 14px;
             font-size: 12px;
@@ -263,14 +274,14 @@ label{
           }
         }
       }
-
       &__bottom{
         padding: 40px;
-        border-top: 1px solid #f5f5f5;
+        border-top: 1px solid #F5F5F5;
         .selling-btn{
           margin: 40px 0 0;
-          background: #ea352d;
-          border: 1px solid #ea352d;
+          background: #EA352D;
+          border: 1px solid #EA352D;
+
           color: #fff;
           display: block;
           width: 100%;
@@ -295,6 +306,4 @@ label{
     }
   }
 }
-
-
 
