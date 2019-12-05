@@ -6,9 +6,7 @@
       .item-box__main__image
         .item-box__main__image__main
         = image_tag "#{@item.images.first.url}", alt: "商品イメージ", class: "item-box__main__image__main__top"
-
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-box__main__image__main__top")
-
+        -# 複数画像投稿できるようにするのはあとで実装
         -# .item-box__main__image__subs
         -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
         -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
@@ -81,7 +79,6 @@
     .item-box__description
       %p.item-description
         = @item.discription
-      -# 商品コメント
     .item-box__container.clearfix
       .item-box__container__left
         %button.item-button-like
@@ -138,8 +135,6 @@
               .item-message__content__box__body__icons__flag
                 %i.far.fa-flag
 
-
-
       .item-message__content
         .item-message__content__caution
           %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
@@ -173,29 +168,16 @@
       %li
         = link_to 'https://www.pinterest.jp/',class: "pinterest-icon" do
           %i.fab.fa-pinterest.icon
-  /そのほかの商品--サーバーサイドで実装
-  -# .items-display__wrap__title
-  -#   %h2.items-display__wrap__title__heading
-  -#     デュフフ新着アイテム
-  -#   %a.items-display__wrap__title__items-detail
-  -#     もっと見る&nbsp;&#62;
-  -# %ul.items-display__wrap__goods
-  -#   - @items.each do |item|
-  -#     %li.items-display__wrap__goods__box
-  -#       // この下の.items-display__wrap__goods__box__divのカスタムデータ属性に商品詳細ページのリンクを貼ってください //
-  -#       .items-display__wrap__goods__box__div  
-  -#         .items-display__wrap__goods__box__div__view
-  -#           = image_tag 'marcari_toys.jpg', alt: 'marcari_toys', class: 'items-display__wrap__goods__box__div__view__top'
-  -#         %p.items-display__wrap__goods__box__div__view__price-label
-  -#           &yen;10,000
-  -#         .items-display__wrap__goods__box__div__view__bottom
-  -#           %p.items-display__wrap__goods__box__div__view__bottom__p
-  -#             デュフフデュフフデュフフデュフフデュフフデュフフ
 
-  %nav.pos-bottom
-    %ul
-      = link_to 'https://www.mercari.com/jp/', class: "link-step" do
-        %li.step-name--1 メルカリ 
-        %i.fas.fa-angle-right.step-next-icon
-      = link_to 'https://www.mercari.com/jp/', class: "link-step" do
-        %li.step-name--2 オススメ DIANA ダイアナ ローファー 22㎝ エナメル ネイビー リボン
+-# 他の商品などは余裕があれば実装
+-# .items-display__wrap
+-#   = render 'view/items-display'
+-#   = render 'view/items-display'
+
+%nav.pos-bottom
+  %ul
+    = link_to 'https://www.mercari.com/jp/', class: "link-step" do
+      %li.step-name--1 メルカリ 
+      %i.fas.fa-angle-right.step-next-icon
+    = link_to 'https://www.mercari.com/jp/', class: "link-step" do
+      %li.step-name--2 オススメ DIANA ダイアナ ローファー 22㎝ エナメル ネイビー リボン
