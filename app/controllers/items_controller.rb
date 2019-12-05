@@ -1,5 +1,10 @@
 class ItemsController < ApplicationController
-  
+
+before_action :set_item, only:[:show, :destroy]
+  def index
+    @items = Item.all
+  end
+
   def new
     @item = Item.new
     @item.images.build
@@ -11,6 +16,18 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def show 
+  end
+
+
+  def destroy
+    if @item.destroy
+      redirect_to mypages_path
+    else
+      redirect_to item_path
     end
   end
 
@@ -29,4 +46,9 @@ class ItemsController < ApplicationController
     )
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
+  
 end
+
