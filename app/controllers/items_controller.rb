@@ -28,7 +28,7 @@ before_action :set_item, only:[:show, :destroy]
 
   def destroy
     if @item.destroy
-      redirect_to mypages_path
+      redirect_to root_path
     else
       redirect_to item_path
     end
