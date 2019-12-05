@@ -32,7 +32,7 @@
           justify-content: flex-start;
           flex-wrap: wrap;
           .item-sub-image{
-            width: 25%;
+            width: 20%;
           }
           
         }
@@ -210,6 +210,10 @@
           a:visited {
             color: black;
           }
+          a:hover{
+            opacity: 0.5 ;
+            transition: 0.3s ;
+          }
           .user-mypage-link{
             text-decoration: none;
             .user-icon-image{
@@ -233,16 +237,15 @@
           padding: 0 16px 16px;
           &__user-name{
             font-weight: bold;
-            a:hover {
-              color: black;
-              border-bottom: solid 1px ;
-            }
             a:visited {
               color: black;
             }
             .user-mypage-link{
               text-decoration: none;
-            
+              .seller-name:hover{
+                opacity: 0.5 ;
+                transition: 0.3s ;
+              }
             }
           }
           &__body{
@@ -373,6 +376,9 @@
       justify-content: center;
       li{
         margin: 0 15px;
+        a:hover{
+          opacity: 0.5 ;
+        }
         .facebook-icon{
           color: blue;
         }
