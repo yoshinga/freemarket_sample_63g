@@ -51,9 +51,9 @@
           .items-contents__box__detail__box__category
             %label
               カテゴリー
-     %span.red-mini
-              %span.red-mini 
-                必須
+
+            %span.red-mini 
+              必須
           %select.box-category{value:"--"}
           .items-contents__box__detail__box__status
             %label
@@ -85,6 +85,7 @@
           .items-contents__box__send__box__date
             %label
               発送までの日数
+              
               %span.red-mini 
                 必須
           = f.collection_select :deliverydays_id , Deliverydays.all, :id, :name, {prompt: true}, {class: "box-date"}
