@@ -5,16 +5,10 @@
     .item-box__main.clearfix
       .item-box__main__image
         .item-box__main__image__main
-        = image_tag "#{@item.images.first.url}", alt: "商品イメージ", class: "item-box__main__image__main__top"
-        -# 複数画像投稿できるようにするのはあとで実装
-        -# .item-box__main__image__subs
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
+          = image_tag "#{@item.images.first.url}", alt: "商品イメージ", class: "item-box__main__image__main__top"
+        .item-box__main__image__subs
+          - @item.images.each do |image|
+            = image_tag("#{image.url}", alt: "商品イメージ", class: "item-sub-image")
           
       %table.item-box__main__table
         %tbody
@@ -72,7 +66,7 @@
       %span.item-tax (税込)
       %span.shipping-fee
         = @item.burden.name
-    -if user_signed_in? && @item.user_id == current_user.id
+    - if user_signed_in? && @item.user_id == current_user.id
       .buy-btn
         = link_to '商品の編集', "" , class: "buy-btn__font"
       .or-message
@@ -82,7 +76,7 @@
         = link_to '出品を一旦停止する', "" , class: "buy-btn-gray__font"
       .buy-btn-gray
         = link_to '商品を削除する', item_path(@item) , class: "buy-btn-gray__font", method: :delete
-    -else
+    - else
       .buy-btn
         = link_to '購入画面に進む', purchase_items_path , class: "buy-btn__font"
       %p.delivery_caution この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
