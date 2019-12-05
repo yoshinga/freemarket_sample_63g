@@ -15,8 +15,9 @@
               必須
           %p
             最大10枚までアップロードできます
-        %ul#will-upload-ul
         .items-contents__box__image__upload
+          %ul#will-upload-ul.items-contents__box__image__upload__ul
+          %ul#will-upload-ul2.items-contents__box__image__upload__ul
           = f.fields_for :images do |image|
             = image.label :url, "ドラッグアンドドロップまたはクリックしてファイルをダウンロード", class: "items-contents__box__image__upload__image-label"
             = image.file_field :url, class: "items-contents__box__image__upload__image-label__file-field"
