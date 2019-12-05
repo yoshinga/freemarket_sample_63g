@@ -6,9 +6,6 @@ $(document).on("turbolinks:load", function() {
   let willUploadUl2 = $("#will-upload-ul2");
   let count = 0
 
-  console.log(willUpLoadUl);
-  console.log(willUploadUl2);
-
   // inputタグを追加する関数
   let addFileFeild = (count) => {
     let inputTag = `
@@ -28,12 +25,6 @@ $(document).on("turbolinks:load", function() {
 
     }
   }
-
-  // let addImageView = (url) => {
-
-    
-
-  // }
 
   let previewFile = (url, count) => {
 
@@ -71,10 +62,8 @@ $(document).on("turbolinks:load", function() {
       }
     }
 
-    
-      
-
     reader.readAsDataURL(url);
+
   }
   
 
@@ -88,28 +77,17 @@ $(document).on("turbolinks:load", function() {
 
       labelForInputTag.attr("for", `item_images_attributes_${count}_url`);
       let url = inputTag[count - 1].files[0]
-      console.log(count);
       
       previewFile(url, count);
       addFileFeild(count);
-      console.log(inputTag);
-      // console.log(inputTag[0].files[0].name);
-      console.log(inputTag[count - 1].files[0]);
-      
-      
 
     } else if (count = 10) {
 
-      console.log(count);
       labelForInputTag.attr("for", `item_images_attributes_${count}_url`);
       let url = inputTag[count - 1].files[0]
-      console.log(count);
       
       previewFile(url, count);
       addFileFeild(count);
-      console.log(inputTag);
-      // console.log(inputTag[0].files[0].name);
-      console.log(inputTag[count - 1].files[0]);
       labelForInputTag.addClass("hide-display");
 
     } else {
