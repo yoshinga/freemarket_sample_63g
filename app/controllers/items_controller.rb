@@ -10,6 +10,10 @@ before_action :set_item, only:[:show, :destroy]
     @item.images.build
   end
 
+  def purchase
+  end
+   
+end
   def create
     @item = Item.new(exhibit_item_params)
     if @item.save
