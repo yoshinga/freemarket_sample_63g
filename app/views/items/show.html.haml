@@ -1,28 +1,27 @@
-= render partial: "view/header"
-
 %body.items-show
   %section.item-box
-    %h1.item-box__name 商品名
+    %h1.item-box__name 
+      = @item.item_name
     .item-box__main.clearfix
       .item-box__main__image
         .item-box__main__image__main
-          = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-box__main__image__main__top")
-
-        .item-box__main__image__subs
-          = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-          = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-          = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-          = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-          = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-          = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-          = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
+        = image_tag "#{@item.images.first.url}", alt: "商品イメージ", class: "item-box__main__image__main__top"
+        -# 複数画像投稿できるようにするのはあとで実装
+        -# .item-box__main__image__subs
+        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
+        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
+        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
+        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
+        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
+        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
+        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
           
       %table.item-box__main__table
         %tbody
           %tr.item-table-data
             %th 出品者
             %td.item-table-data__user
-              = link_to "ユーザー名", "", class: "item-user-name" 
+              = link_to "#{@item.user.nickname}", "", class: "item-user-name" 
               .item-user-rating-box
                 .item-user-rating
                   %i.fas.fa-laugh.rating-icon-color--one
@@ -48,11 +47,11 @@
           %tr.item-table-data
             %th 商品の状態
             %td.item-table-data__condition
-              未使用に近い
+              = @item.condition.name
           %tr.item-table-data
             %th 配送料の負担
             %td.item-table-data__
-              送料込み(出品者負担)
+              = @item.burden.name
           %tr.item-table-data__postage
             %th 配送の方法
             %td
@@ -60,24 +59,26 @@
           %tr.item-table-data
             %th 配送元地域
             %td.item-table-data__area
-              = link_to "愛知県", "", class: "prefectures"
+              = link_to "#{@item.prefecture.name}", "", class: "prefectures"
           %tr.item-table-data
             %th 発送日の目安
             %td.item-table-data__date
-              1~2日で発送
+              = @item.deliverydays.name
     .item-box__price
       %br
       %br
-      %span.item-price ¥9,000
+      %span.item-price
+        = @item.price
       %span.item-tax (税込)
-      %span.shipping-fee 送料込み
+      %span.shipping-fee
+        = @item.burden.name
     .buy-btn
-      = link_to '購入画面に進む', "" , class: "buy-btn__font"
+      = link_to '購入画面に進む', purchase_items_path , class: "buy-btn__font"
     %p.delivery_caution この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
 
     .item-box__description
-      %p.item-description サイズが合わず一回しか着ておりません。サイズが合わず一回しか着ておりません。サイズが合わず一回しか着ておりません。サイズが合わず一回しか着ておりません。サイズが合わず一回しか着ておりません。
-      -# 商品コメント
+      %p.item-description
+        = @item.discription
     .item-box__container.clearfix
       .item-box__container__left
         %button.item-button-like
@@ -102,7 +103,8 @@
         .item-message__content__box
           .item-message__content__box__user-name
             = link_to  "", class: "user-mypage-link" do
-              %p.buyer-name ユーザー名
+              %p.buyer-name 
+                購入者
           .item-message__content__box__body
             .item-message__content__box__body__text
               %p.buyer-comment 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
@@ -122,7 +124,8 @@
         .item-message__content__box
           .item-message__content__box__user-name
             = link_to  "", class: "user-mypage-link" do
-              %p.seller-name ユーザー名
+              %p.seller-name 
+                = @item.user.nickname
           .item-message__content__box__body
             %p.seller-comment 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
             .item-message__content__box__body__icons
@@ -131,8 +134,6 @@
                 %span.seller-comment-create 1時間前
               .item-message__content__box__body__icons__flag
                 %i.far.fa-flag
-
-
 
       .item-message__content
         .item-message__content__caution
@@ -167,31 +168,16 @@
       %li
         = link_to 'https://www.pinterest.jp/',class: "pinterest-icon" do
           %i.fab.fa-pinterest.icon
-  /そのほかの商品--サーバーサイドで実装
-  -# .items-display__wrap__title
-  -#   %h2.items-display__wrap__title__heading
-  -#     デュフフ新着アイテム
-  -#   %a.items-display__wrap__title__items-detail
-  -#     もっと見る&nbsp;&#62;
-  -# %ul.items-display__wrap__goods
-  -#   - @items.each do |item|
-  -#     %li.items-display__wrap__goods__box
-  -#       // この下の.items-display__wrap__goods__box__divのカスタムデータ属性に商品詳細ページのリンクを貼ってください //
-  -#       .items-display__wrap__goods__box__div  
-  -#         .items-display__wrap__goods__box__div__view
-  -#           = image_tag 'marcari_toys.jpg', alt: 'marcari_toys', class: 'items-display__wrap__goods__box__div__view__top'
-  -#         %p.items-display__wrap__goods__box__div__view__price-label
-  -#           &yen;10,000
-  -#         .items-display__wrap__goods__box__div__view__bottom
-  -#           %p.items-display__wrap__goods__box__div__view__bottom__p
-  -#             デュフフデュフフデュフフデュフフデュフフデュフフ
 
-  %nav.pos-bottom
-    %ul
-      = link_to 'https://www.mercari.com/jp/', class: "link-step" do
-        %li.step-name--1 メルカリ 
-        %i.fas.fa-angle-right.step-next-icon
-      = link_to 'https://www.mercari.com/jp/', class: "link-step" do
-        %li.step-name--2 オススメ DIANA ダイアナ ローファー 22㎝ エナメル ネイビー リボン
+-# 他の商品などは余裕があれば実装
+-# .items-display__wrap
+-#   = render 'view/items-display'
+-#   = render 'view/items-display'
 
-= render partial: "view/footer"
+%nav.pos-bottom
+  %ul
+    = link_to 'https://www.mercari.com/jp/', class: "link-step" do
+      %li.step-name--1 メルカリ 
+      %i.fas.fa-angle-right.step-next-icon
+    = link_to 'https://www.mercari.com/jp/', class: "link-step" do
+      %li.step-name--2 オススメ DIANA ダイアナ ローファー 22㎝ エナメル ネイビー リボン
