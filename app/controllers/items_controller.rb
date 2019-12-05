@@ -46,7 +46,7 @@ before_action :set_item, only:[:show, :destroy]
       :deliverydays_id,
       :price,
       images_attributes: [:url]
-    )
+    ).merge(user_id: current_user.id)
   end
 
   def set_item

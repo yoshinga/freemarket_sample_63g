@@ -9,7 +9,8 @@
       // この下の.items-display__wrap__goods__box__divのカスタムデータ属性に商品詳細ページのリンクを貼ってください //
       .items-display__wrap__goods__box__div  
         .items-display__wrap__goods__box__div__view
-          = image_tag "#{item.images.first.url}", alt: 'marcari_toys', class: 'items-display__wrap__goods__box__div__view__top'
+          = link_to item_path(item), class: "user-mypage-link" do
+            = image_tag "#{item.images.first.url}", alt: 'marcari_toys', class: 'items-display__wrap__goods__box__div__view__top'
         %p.items-display__wrap__goods__box__div__view__price-label
           &yen;
           = item.price

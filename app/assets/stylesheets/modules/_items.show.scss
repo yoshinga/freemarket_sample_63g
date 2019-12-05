@@ -370,29 +370,29 @@
       }
     }
   }
-  .pos-bottom{
-    margin-top: 30px;
-    width: 100%;
-    border-top: solid 1px #dddddd;
-    height: 40px;
-    line-height: 40px;
-    a:visited {
-      color: black;
-    }
-    ul{
-      width: 70%;
-      margin: 0 auto;
+}
+.pos-bottom{
+  margin-top: 30px;
+  width: 100%;
+  border-top: solid 1px #dddddd;
+  height: 40px;
+  line-height: 40px;
+  a:visited {
+    color: black;
+  }
+  ul{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    .link-step{
       display: flex;
-      .link-step{
-        display: flex;
-        text-decoration: none;
-        .step-name{  
-          margin-right: 10px;
-        }
-        .step-next-icon{
-          line-height: 40px;
-          margin-right: 10px;
-        }
+      text-decoration: none;
+      .step-name{  
+        margin-right: 10px;
+      }
+      .step-next-icon{
+        line-height: 40px;
+        margin-right: 10px;
       }
     }
   }
