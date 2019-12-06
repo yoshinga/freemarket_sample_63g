@@ -1,4 +1,4 @@
-= link_to new_item_path, class: "item-exhibit" do
+-# = link_to new_item_path, class: "item-exhibit" do
   .item-exhibit__wrap
     %h2.item-exhibit__wrap__heading
       出品
@@ -7,7 +7,9 @@
 
 
 %main
+  = link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path(:facebook) 
   = render "view/main"
+
 
 -# %footer
 -#   = render "footer"
