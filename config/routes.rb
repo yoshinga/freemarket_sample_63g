@@ -22,8 +22,11 @@ Rails.application.routes.draw do
   resources :signup ,only: [:index, :create] do
       collection do
         get 'registration'
+        post 'registration'
+        get 'sms_confirmation'
         post 'sms_confirmation'
         post 'address'
+        get 'address'
         post 'credit_card' # ここで、入力の全てが終了する
         post 'create'
         get 'done' #入力完了後のページ
