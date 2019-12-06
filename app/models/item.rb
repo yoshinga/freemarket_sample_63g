@@ -19,9 +19,9 @@ class Item < ApplicationRecord
     validates :deliverydays_id
     # validates :items_status
   end
-  
+
+  belongs_to :user, optional: true
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
 
 end
-
