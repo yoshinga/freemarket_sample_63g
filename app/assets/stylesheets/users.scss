@@ -9,6 +9,21 @@ body{
       height: 49px;
       background-color: #fff;
       box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+      a{
+
+        margin: 0 auto;
+      }
+      .breadcrumbs{
+        line-height: 49px;
+        margin: 0 0 0 210px;
+        .current{
+          font-weight: bold;
+        }
+        a{
+          text-decoration: none;
+          color: #000;
+        }
+      }
     };
     .l-container{
       display: flex;
@@ -72,7 +87,6 @@ body{
           height: 160px;
           padding: 20px;
           background-color: #fff;
-          margin-top: 48px;
           &__a{
             width: 100%;
             height: 100%;
