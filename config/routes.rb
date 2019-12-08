@@ -25,5 +25,4 @@ Rails.application.routes.draw do
       get 'done' #入力完了後のページ
     end
   end
-
 end
