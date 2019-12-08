@@ -1,95 +1,127 @@
-.first-items-header
+.items-contents.first-items-header
   .first-items-header__logo
     = link_to image_tag("/fmarket_logo_red.svg",size: "200x120"), ""
 .items-main
-  %form.items-contents
-    .items-contents__message 
-      %b 商品の情報を入力
+  = form_with(model: @item, class: "items-contents") do |f|
+    .items-contents__message
+      %h.items-contents__message__heading
+        商品の情報を入力
+
     .items-contents__box
       .items-contents__box__image
         .items-contents__box__image__text
           %h
             出品画像
-            %span.red-mini 必須
-          %p 最大10枚までアップロードできます
+            %span.red-mini
+              必須
+          %p
+            最大10枚までアップロードできます
         .items-contents__box__image__upload
-          .image-text
-            %p ドラッグアンドドロップ
-            %p またはクリックしてファイルをアップロード
-
+          %ul#will-upload-ul.items-contents__box__image__upload__ul
+          %ul#will-upload-ul2.items-contents__box__image__upload__ul
+          = f.fields_for :images do |image|
+            = image.label :url, "ドラッグアンドドロップまたはクリックしてファイルをダウンロード", class: "items-contents__box__image__upload__image-label"
+            = image.file_field :url, class: "items-contents__box__image__upload__image-label__file-field"
       .items-contents__box__item
         .items-contents__box__item__name
           %label
-            %h 商品名
-          %span.red-mini 必須
+            %h
+              商品名
+          %span.red-mini
+
+            必須
           .items-contents__box__item__name__text
-            %input.items-contents__box__item__name__text__box{type: "text", value:"", placeholder: "商品名（必須40時まで）"}
+            = f.text_field :item_name, class: 'items-contents__box__item__name__text__box', placeholder: '商品名（必須40時まで）'
         .items-contents__box__item__description
           %label
-            %h 商品の説明
-          %span.red-mini 必須
+            %h1
+              商品の説明
+
+          %span.red-mini 
+            必須
           .items-contents__box__item__description__text
-            %textarea.items-contents__box__item__description__text__box{ raws: "5", placeholder: "商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷がありません。合わせやすいのでおすすめです。"}
+            = f.text_area :discription, class: 'items-contents__box__item__description__text__box', placeholder: '商品の説明（必須1000文字以内）（色、素材、重さ、定価、注意点など）例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷がありません。合わせやすいのでおすすめです。', raws: '5'
 
       .items-contents__box__detail
         .items-contents__box__detail__head
-          %h 商品の詳細
+          %h1
+            商品の詳細
+
         .items-contents__box__detail__box
           .items-contents__box__detail__box__category
             %label
               カテゴリー
-              %span.red-mini 必須
+            %span.red-mini 
+              必須
+
           %select.box-category{value:"--"}
           .items-contents__box__detail__box__status
             %label
-            商品の状態
-            %span.red-mini 必須
-          %select.box-status{value: "--"}
+              商品の状態
+
+            %span.red-mini 
+              必須
+          = f.collection_select :condition_id , Condition.all, :id, :name, {prompt: true}, {class: "box-category"}
 
       .items-contents__box__send
         .items-contents__box__send__head
-          %h 配送について
-          %p1 ?
+          %h 
+            配送について
+          %p1 
+            ?
         .items-contents__box__send__box
           .items-contents__box__send__box__user
             %label
               配送料の負担
-              %span.red-mini 必須
-          %select.box-user{value: "--"}
+              %span.red-mini 
+                必須
+          = f.collection_select :burden_id , Burden.all, :id, :name, {prompt: true}, {class: "box-user"}
           .items-contents__box__send__box__region
             %label
               発送元の地域
-              %span.red-mini 必須
-          %select.box-region{value: "--"}
+              %span.red-mini 
+                必須
+          = f.collection_select :prefecture_id , Prefecture.all, :id, :name, {prompt: true}, {class: "box-user"}
           .items-contents__box__send__box__date
             %label
               発送までの日数
-              %span.red-mini 必須
-          %select.box-date{value: "--"}
+              
+              %span.red-mini 
+                必須
+          = f.collection_select :deliverydays_id , Deliverydays.all, :id, :name, {prompt: true}, {class: "box-date"}
 
       .items-contents__box__price
         .items-contents__box__price__head
-          %h 販売価格(300~9,999,999)
-          %p1 ?
+          %h 
+            販売価格(300~9,999,999)
+          %p1 
+            ?
         .items-contents__box__price__form
           %ul
             %li.price-list
               %label.price-list__left
-                %h 価格
-              %span.red-mini 必須
+                %h 
+                  価格
+              %span.red-mini 
+                必須
               .price-list__right
-                %h ¥
-                %input.input-price{type: "number", value: "", placeholder: "例）300"}
+                %h 
+                  ¥
+                = f.text_field :price, class: 'input-price', placeholder: '例）300'
             %li.charge-list
               .charge-list__left
-                %h 販売手数料(10%)
+                %h 
+                  販売手数料(10%)
               .charge-list__right
-                %h -
+                %h1.charge-list__right__commission#sell-commission
+                  ー
             %li.profit-list
               .profit-list__left
-                %h 販売利益
+                %h 
+                  販売利益
               .profit-list__right
-                %h ー
+                %h1#seles-profit
+                  ー
 
       .items-contents__box__bottom
         .items-contents__box__bottom__text

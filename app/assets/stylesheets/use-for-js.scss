@@ -1,0 +1,121 @@
+.show-display {
+  display: block;
+}
+
+.hide-display {
+  display: none;
+}
+
+.li {
+  list-style: none;
+  width: calc(628.19px / 5);
+  padding: 0 10px;
+  height: 162px;
+  box-sizing: border-box;
+} 
+
+.width1 {
+  width: calc(628.19px / 5);
+}
+
+.width2 {
+  width: calc(628.19px / 5 * 2);
+}
+
+.width3 {
+  width: calc(628.19px / 5 * 3);
+}
+
+.width4 {
+  width: calc(628.19px / 5 * 4);
+}
+
+.width5 {
+  width: calc(628.19px / 5 * 5);
+}
+
+.width6 {
+  width: calc(628.19px / 5 );
+}
+
+.width7 {
+  width: calc(628.19px / 5 * 2);
+}
+
+.width8 {
+  width: calc(628.19px / 5 * 3);
+}
+
+.width9 {
+  width: calc(628.19px / 5 * 4);
+}
+
+.width10 {
+  width: calc(628.19px / 5 * 5);
+}
+
+.width-for-label1 {
+  width: calc(628.19px / 5 * 4) !important;
+}
+
+.width-for-label2 {
+  width: calc(628.19px / 5 * 3) !important;
+}
+
+.width-for-label3 {
+  width: calc(628.19px / 5 * 2) !important;
+}
+
+.width-for-label4 {
+  width: calc(628.19px / 5 * 1) !important;
+}
+
+.width-for-label5 {
+  width: 100% !important;
+}
+
+.width-for-label6 {
+  width: calc(628.19px / 5 * 4) !important;
+}
+
+.width-for-label7 {
+  width: calc(628.19px / 5 * 3) !important;
+}
+.width-for-label8 {
+  width: calc(628.19px / 5 * 2) !important;
+}
+.width-for-label9 {
+  width: calc(628.19px / 5 * 1) !important;
+}
+
+// .width-for-label5{
+//   width: calc(628.19px / 5 * 4)
+// }
+
+.flex{
+  display: flex;
+  height: 30%;
+}
+
+.img-wrap {
+  width: 100%;
+  height: 70%;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+}
+
+.edit-or-delete {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  padding-top: 20px;
+  text-align: center;
+  color: #4c9ccc;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline
+  }
+}

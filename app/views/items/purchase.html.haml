@@ -1,0 +1,64 @@
+.first-items-header
+  .first-items-header__logo
+    = link_to image_tag("/fmarket_logo_red.svg",size: "200x120"), ""
+.items-main
+  .items-contents
+    .items-contents__message 
+      %b 購入内容の確認
+    .items-contents__box
+      .items-contents__box__buy-item
+        .items-contents__box__buy-item__inner
+          .items-contents__box__buy-item__inner__image
+            = image_tag 'marcari_toys.jpg', alt: 'marcari_toys', class: 'items-contents__box__buy-item__inner__image-src'
+          %p.items-contents__box__buy-item__inner__name
+            商品名
+          %form.items-contents__box__buy-item__inner__form
+            %p.buy-price
+              ¥520
+              %span.buy-price__sentence
+                送料込み
+            .buy-point
+              .buy-point__sentence
+                %p.point-sentence
+                  ポイントはありません
+            .buy-total-price
+              .buy-total-price__sentence
+                %p.price-sentence
+                  支払い金額
+              .buy-total-price__all
+                %span.total-price
+                  ¥520
+            %botton.buy-btn{type: 'submit'}
+              購入する
+
+      .items-contents__box__buy-user
+        .items-contents__box__buy-user__inner
+          %h1.items-contents__box__buy-user__inner__address
+            配送先
+          .items-contents__box__buy-user__inner__address-detail
+            %p.address-number
+              〒000-0000
+            %p.address-detail
+              東京都
+            %p.address-name
+              名前
+          .items-contents__box__buy-user__inner__change
+            = link_to '#' do
+              %a.items-contents__box__buy-user__inner__change__sentence
+                変更する >
+
+      .items-contents__box__pay-method
+        .items-contents__box__pay-method__inner
+          %h1.items-contents__box__pay-method__inner__method
+            支払い方法
+          .items-contents__box__pay-method__inner__credit
+            %p.credit-number
+              *************0000
+            %p.credit-date
+              11/11
+          = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1855818912', height: '40', width: '37', class: '.credit-img'
+          .items-contents__box__pay-method__inner__change
+            = link_to '#' do
+              %a.items-contents__box__pay-method__inner__change__sentence
+                変更する >
+= render partial: "shared/signup-footer"
