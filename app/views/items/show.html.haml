@@ -73,7 +73,7 @@
       %span.shipping-fee
         = @item.burden.name
     .buy-btn
-      = link_to '購入画面に進む', purchase_items_path , class: "buy-btn__font"
+      = link_to '購入画面に進む', confirmation_item_url, class: "buy-btn__font"
     %p.delivery_caution この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
 
     .item-box__description

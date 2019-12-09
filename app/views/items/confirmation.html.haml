@@ -9,12 +9,12 @@
       .items-contents__box__buy-item
         .items-contents__box__buy-item__inner
           .items-contents__box__buy-item__inner__image
-            = image_tag 'marcari_toys.jpg', alt: 'marcari_toys', class: 'items-contents__box__buy-item__inner__image-src'
+            = image_tag "#{@item.images.first.url}", alt: 'marcari_toys', class: 'items-contents__box__buy-item__inner__image-src'
           %p.items-contents__box__buy-item__inner__name
-            商品名
+            = @item.item_name
           %form.items-contents__box__buy-item__inner__form
             %p.buy-price
-              ¥520
+              = "¥#{@item.price}"
               %span.buy-price__sentence
                 送料込み
             .buy-point
@@ -27,8 +27,8 @@
                   支払い金額
               .buy-total-price__all
                 %span.total-price
-                  ¥520
-            %botton.buy-btn{type: 'submit'}
+                  = "¥#{@item.price}"
+            %botton.buy-btn{type: 'submit', action:}
               購入する
 
       .items-contents__box__buy-user
@@ -37,11 +37,11 @@
             配送先
           .items-contents__box__buy-user__inner__address-detail
             %p.address-number
-              〒000-0000
+              = current_user.address.postal_code
             %p.address-detail
-              東京都
+              = "#{current_user.address.prefecture}  " + "#{current_user.address.city}  " + "#{current_user.address.house_number}  " + "#{current_user.address.building_name}  "
             %p.address-name
-              名前
+              = "#{current_user.family_name}  " + "#{current_user.first_name}  "
           .items-contents__box__buy-user__inner__change
             = link_to '#' do
               %a.items-contents__box__buy-user__inner__change__sentence
@@ -53,9 +53,11 @@
             支払い方法
           .items-contents__box__pay-method__inner__credit
             %p.credit-number
-              *************0000
+              = "**** - **** - **** - "
+              -# = "**** - **** - **** - #{@card_information.last4}"
             %p.credit-date
-              11/11
+              -# = "0#{@card_information.exp_month}/#{@card_information.exp_year.to_s.slice!(2..3)}"
+              = "0"
           = image_tag '//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1855818912', height: '40', width: '37', class: '.credit-img'
           .items-contents__box__pay-method__inner__change
             = link_to '#' do
