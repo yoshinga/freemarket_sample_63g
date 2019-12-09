@@ -9,7 +9,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
   
   def google_oauth2
-    binding.pry
     callback_for(:google)
   end
 
