@@ -1,6 +1,6 @@
 .header
   .header__upper-list
-    = image_tag '/fmarket_logo_red.svg', alt: 'fmarket_logo_red', height: '40', class: 'header__upper-list__icon'
+    = link_to image_tag('/fmarket_logo_red.svg', height: '40', alt: 'fmarket_logo_red',), root_path, class: 'header__upper-list__icon'
     %form.header__upper-list__form
       %input.header__upper-list__form__text{type: "text", value:"", placeholder: "何かお探しですか？"}
       -# = fa_icon 'search', class: 'header__upper-list__form__icon'
