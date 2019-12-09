@@ -173,10 +173,8 @@
 -#   = render 'view/items-display'
 -#   = render 'view/items-display'
 
-%nav.pos-bottom
-  %ul
-    = link_to root_path, class: "link-step" do
-      %li.step-name--1 メルカリ 
-      %i.fas.fa-angle-right.step-next-icon
-    = link_to "", class: "link-step" do
-      %li.step-name--2 オススメ DIANA ダイアナ ローファー 22㎝ エナメル ネイビー リボン(パンくず)
+.default-container
+  .bread-crumbs
+    - breadcrumb :show_item
+    = breadcrumbs separator: " &rsaquo; "
+  
