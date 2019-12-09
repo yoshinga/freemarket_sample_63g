@@ -81,4 +81,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
 gem "jquery-rails"
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
