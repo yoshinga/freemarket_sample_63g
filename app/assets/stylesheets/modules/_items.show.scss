@@ -367,6 +367,9 @@
       padding: 25px 40px;
       display: flex;
       justify-content: center;
+      a:hover {
+        opacity: 0.5 ;
+      }
       li{
         margin: 0 15px;
         .facebook-icon{
