@@ -11,7 +11,7 @@ before_action :set_item, only:[:show, :destroy]
   end
 
   def confirmation
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     if card.blank?
       redirect_to controller: "card", action: "new"
     else
@@ -23,7 +23,7 @@ before_action :set_item, only:[:show, :destroy]
   end
 
   def purchase
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     @item = Item.find(params[:id])
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
