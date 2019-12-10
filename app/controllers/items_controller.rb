@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
+
 before_action :set_item, only:[:show, :destroy, :edit, :update]
+
   def index
     @items = Item.all
   end
@@ -10,7 +12,32 @@ before_action :set_item, only:[:show, :destroy, :edit, :update]
     @item.images.build
   end
 
+  def confirmation
+    card = Card.find_by(user_id: current_user.id)
+    if card.blank?
+      redirect_to controller: "card", action: "new"
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @default_card_information = customer.cards.retrieve(card.card_id)
+      @item = Item.find(params[:id])
+    end
+  end
+
   def purchase
+    card = Card.find_by(user_id: current_user.id)
+    @item = Item.find(params[:id])
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp::Charge.create(
+      amount: @item.price, #itemテーブルに紐づけ
+      customer: card.customer_id, #顧客ID
+      currency: 'jpy', #日本円
+    )
+    redirect_to action: 'purchase_end'
+  end
+
+  def purchase_end
+    
   end
    
   def create
@@ -39,12 +66,13 @@ before_action :set_item, only:[:show, :destroy, :edit, :update]
     else
       render edit_item_path(@item)
     end
+
   end
 
 
   def destroy
     if @item.destroy
-      redirect_to mypages_path
+      redirect_to root_path
     else
       redirect_to item_path
     end
@@ -75,4 +103,3 @@ before_action :set_item, only:[:show, :destroy, :edit, :update]
 
   
 end
-

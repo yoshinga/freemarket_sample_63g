@@ -9,10 +9,26 @@ body{
       height: 49px;
       background-color: #fff;
       box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+      a{
+
+        margin: 0 auto;
+      }
+      .breadcrumbs{
+        line-height: 49px;
+        margin: 0 0 0 210px;
+        .current{
+          font-weight: bold;
+        }
+        a{
+          text-decoration: none;
+          color: #000;
+        }
+      }
     };
     .l-container{
       display: flex;
-      margin: 0 210px 0px 210px;
+      width: 80%;
+      margin: 0 auto;
       padding-bottom: 40px;
       .l-side{
         width: 280px;
@@ -100,8 +116,9 @@ body{
           }
         }
         .mypage-tab-container-notification-todo{
-          background-color: #f1f1f1;
+          background-color: #fff;
           width: 100%;
+          padding-bottom: 16px;
           .mypage-tabs{
             width: 100%;
             height: 72px;
@@ -111,7 +128,7 @@ body{
             &__h3{
               text-align: center;
               line-height: 72px;
-              width: 350px;
+              width: 50%;
               height: 72px;
               a{
               text-decoration: none;
@@ -123,6 +140,7 @@ body{
             };
             .tab-content{
               &__ul{
+                width: 100%;
                 &__li{
                  background-color: #fff;
                  border-bottom: 1px solid #f5f5f5;
@@ -164,23 +182,27 @@ body{
                   };
                 };
                 .mypage-go-list{
-                  width: calc(100% - 32px);
+                  width: 100%;
                   height: 56px;
-                  padding: 16px;
                   text-decoration: none;
                   background-color: #fff;
-                  &__a{
-                    width: 100%;
+                  &__box{
+                    width: 95%;
                     height: 56px;
-                    background-color: #eee;
+                    margin: 16px auto;
                     text-align: center;
                     line-height: 56px;
-                    display: inline-block;
-                    text-decoration: none;
-                    color: #333;
-
-
-                  };
+                    background-color: #eee;
+                    &__a{
+                      width: 100%;
+                      height: 56px;
+                      text-align: center;
+                      line-height: 56px;
+                      display: inline-block;
+                      text-decoration: none;
+                      color: #333;
+                    };
+                  }
                 };
               };
 
@@ -193,8 +215,8 @@ body{
           background-color: #fff;
           .mypage-tab-head{
             width: calc(100% - 32px);
+            padding-left: 16px;
             height: 72px;
-            padding: 0 16px 0 16px;
             background-color: #fff;
             line-height: 72px;
             font-weight: bold;

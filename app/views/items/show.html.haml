@@ -1,14 +1,16 @@
 %body.items-show
+  %script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+  %script src="item-show.js"
   %section.item-box
     %h1.item-box__name
       = @item.item_name
     .item-box__main.clearfix
       .item-box__main__image
         .item-box__main__image__main
-          = image_tag "#{@item.images.first.url}", alt: "商品イメージ", class: "item-box__main__image__main__top"
+          = image_tag "#{@item.images.first.url}", alt: "商品イメージ", class: "item-box__main__image__main__top", id:"main-photo"
         .item-box__main__image__subs
           - @item.images.each do |image|
-            = image_tag("#{image.url}", alt: "商品イメージ", class: "item-sub-image")
+            = image_tag("#{image.url}", alt: "商品イメージ", class: "change-photo")
       %table.item-box__main__table
         %tbody
           %tr.item-table-data
@@ -57,7 +59,7 @@
       %br
       %br
       %span.item-price
-        = "¥#{@item.price}"
+        = number_to_currency(@item.price, precision: 0, unit: "¥")
       %span.item-tax (税込)
       %span.shipping-fee
         = @item.burden.name
@@ -122,7 +124,8 @@
         .item-message__content__box
           .item-message__content__box__user-name
             = link_to users_path(@item.user_id), class: "user-mypage-link" do
-              %p.seller-name
+
+              %p.seller-name 
                 = @item.user.nickname
           .item-message__content__box__body
             %p.seller-comment 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
@@ -142,10 +145,12 @@
             = form.submit "コメントする", class: "item-message-submit__btn"
     %ul.item-link
       %li.prev-link
-        - @random.each do |random_item|
+
+        - @random.each do |random_item| 
           = link_to item_path(random_item.id), class: "prev-link__1" do
             %p.prev-link-text
               = random_item.item_name
+
   .item-socialmedia
     %ul.item-socialmedia__box
       %li
@@ -164,10 +169,9 @@
 -# .items-display__wrap
 -#   = render 'view/items-display'
 -#   = render 'view/items-display'
-%nav.pos-bottom
-  %ul
-    = link_to root_path, class: "link-step" do
-      %li.step-name--1 メルカリ
-      %i.fas.fa-angle-right.step-next-icon
-    = link_to "", class: "link-step" do
-      %li.step-name--2 オススメ DIANA ダイアナ ローファー 22㎝ エナメル ネイビー リボン(パンくず)
+
+.default-container
+  .bread-crumbs
+    - breadcrumb :show_item
+    = breadcrumbs separator: " &rsaquo; "
+  
