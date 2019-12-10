@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only:[:show, :destroy]
-  
+
+
+before_action :set_item, only:[:show, :destroy, :edit, :update]
+
   def index
     @items = Item.all
   end
@@ -51,6 +53,22 @@ class ItemsController < ApplicationController
     @random = Item.order("RAND()").limit(2).where.not(id: @item.id)
   end
 
+  def edit
+    
+    # @image = exhibit_item_params[:images_attributes][:url]
+    @images = @item.images
+  
+  end
+  
+  def update
+    if @item.update(exhibit_item_params) 
+      redirect_to root_path(@item)
+    else
+      render edit_item_path(@item)
+    end
+
+  end
+
 
   def destroy
     if @item.destroy
@@ -78,5 +96,10 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
+  # def update_params
+  #   @image = exhibit_item_params[:images_attributes][:url]
+  # end
+
   
 end

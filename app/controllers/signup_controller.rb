@@ -33,7 +33,7 @@ class SignupController < ApplicationController
       session[:id] = @user.id   #doneアクションでログインする用にsession[:id]に@user.id を代入
       redirect_to done_signup_index_path    #saveできたらdoneアクションに遷移
     else
-      render registration_signup_index_path   #saveできなかったら最初の入力フォームに戻る
+      redirect_to registration_signup_index_path   #saveできなかったら最初の入力フォームに戻る
     end
       
   end
@@ -64,7 +64,7 @@ class SignupController < ApplicationController
       year: "23",
       code: "012"
     )
-      render '/signup/registration' unless @user.valid? #仮で作成したインスタンスのバリデーションチェック
+      render '/signup/registration' unless @user.valid? method: :post #仮で作成したインスタンスのバリデーションチェック
   end
 
   def address_validates
@@ -101,7 +101,7 @@ class SignupController < ApplicationController
       house_number: session[:house_number],
       building_name: session[:building_name]
     )
-      render '/signup/address' unless @user.valid? && @address.valid?     #仮で作成したインスタンスのバリデーションチェック
+      redirect_to '/signup/address' unless @user.valid? && @address.valid?     #仮で作成したインスタンスのバリデーションチェック
   end
 
   def credit_card_validates
@@ -125,7 +125,7 @@ class SignupController < ApplicationController
       year: session[:year],
       code: session[:code]
       )
-      render '/signup/credit_card' unless @user.valid?
+      redirect_to '/signup/credit_card' unless @user.valid?
   end
   private
 

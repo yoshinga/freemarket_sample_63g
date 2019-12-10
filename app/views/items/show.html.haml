@@ -2,7 +2,7 @@
   %script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
   %script src="item-show.js"
   %section.item-box
-    %h1.item-box__name 
+    %h1.item-box__name
       = @item.item_name
     .item-box__main.clearfix
       .item-box__main__image
@@ -11,13 +11,12 @@
         .item-box__main__image__subs
           - @item.images.each do |image|
             = image_tag("#{image.url}", alt: "商品イメージ", class: "change-photo")
-          
       %table.item-box__main__table
         %tbody
           %tr.item-table-data
             %th 出品者
             %td.item-table-data__user
-              = link_to "#{@item.user.nickname}", "", class: "item-user-name" 
+              = link_to "#{@item.user.nickname}", "", class: "item-user-name"
               .item-user-rating-box
                 .item-user-rating
                   %i.fas.fa-laugh.rating-icon-color--one
@@ -66,7 +65,7 @@
         = @item.burden.name
     - if user_signed_in? && @item.user_id == current_user.id
       .buy-btn
-        = link_to '商品の編集', "" , class: "buy-btn__font"
+        = link_to '商品の編集', edit_item_path(@item) , class: "buy-btn__font"
       .or-message
         .or-message__text
           %p or
@@ -94,7 +93,6 @@
         = link_to "", class: "safe-description-btn" do
           %i.fas.fa-lock
           %span あんしん・あんぜんへの取り組み
-
   .item-message
     .item-message__contents
       .item-message__content
@@ -105,7 +103,7 @@
         .item-message__content__box
           .item-message__content__box__user-name
             = link_to  "", class: "user-mypage-link" do
-              %p.buyer-name 
+              %p.buyer-name
                 購入者
           .item-message__content__box__body
             .item-message__content__box__body__text
@@ -119,13 +117,14 @@
       -# 出品者コメント
       .item-message__content
         .item-message__content__icon
-          = link_to  "", class: "user-mypage-link" do
+          = link_to users_path(@item.user_id), class: "user-mypage-link" do
             = image_tag("/user-icon-image.jpeg",alt:"アイコン画像", class: "user-icon-image")
             .item-seller
               %span.seller-font-size 出品者
         .item-message__content__box
           .item-message__content__box__user-name
             = link_to users_path(@item.user_id), class: "user-mypage-link" do
+
               %p.seller-name 
                 = @item.user.nickname
           .item-message__content__box__body
@@ -136,23 +135,22 @@
                 %span.seller-comment-create 1時間前
               .item-message__content__box__body__icons__flag
                 %i.far.fa-flag
-
       .item-message__content
         .item-message__content__caution
           %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
       .item-message__content
-        = form_with class: :item_comment_form do |form| 
+        = form_with class: :item_comment_form do |form|
           = form.text_field :text_area, class: "item-textarea-default"
           .item-message-submit
             = form.submit "コメントする", class: "item-message-submit__btn"
-
     %ul.item-link
       %li.prev-link
+
         - @random.each do |random_item| 
           = link_to item_path(random_item.id), class: "prev-link__1" do
             %p.prev-link-text
               = random_item.item_name
- 
+
   .item-socialmedia
     %ul.item-socialmedia__box
       %li
@@ -167,7 +165,6 @@
       %li
         = link_to 'https://www.pinterest.jp/',class: "pinterest-icon" do
           %i.fab.fa-pinterest.icon
-
 -# 他の商品などは余裕があれば実装
 -# .items-display__wrap
 -#   = render 'view/items-display'

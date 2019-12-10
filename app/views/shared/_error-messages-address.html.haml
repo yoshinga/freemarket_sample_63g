@@ -1,0 +1,6 @@
+- if @user.build_address.errors.any?
+  - unless @user.build_address.valid?
+    -if errors = @user.build_address.errors.full_messages_for(column.to_sym)
+      %ul
+        - errors.each do |error|
+          %li.error-message  正しく入力してください  

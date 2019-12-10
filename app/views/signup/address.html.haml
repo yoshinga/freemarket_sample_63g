@@ -34,17 +34,22 @@
             %b お名前  
             %span.red-mini 必須
             = f.text_field :family_name, class: 'input-field', placeholder: "   例）山田"
+            = render partial: 'shared/error-messages', locals: {user: @user, column: "family_name"} 
             = f.text_field :first_name, class: 'input-field', placeholder: "   例）彩"
+            = render partial: 'shared/error-messages', locals: {user: @user, column: "first_name"}
           .signup-contents-box-inner__field
             %b お名前カナ 
             %span.red-mini 必須
             = f.text_field :family_kana_name, class: 'input-field', placeholder: "   例）ヤマダ"
+            = render partial: 'shared/error-messages', locals: {user: @user, column: "family_kana_name"}
             = f.text_field :first_kana_name, class: 'input-field', placeholder: "   例）アヤ"
+            = render partial: 'shared/error-messages', locals: {user: @user, column: "first_kana_name"}
             = f.fields_for :address do |fin|
               .signup-contents-box-inner__field
                 %b 郵便番号  
                 %span.red-mini 必須
                 = fin.text_field :postal_code, class: 'input-field', placeholder: "   例）123-4567"
+                = render partial: 'shared/error-messages-address', locals: {user: @user.build_address, column: "postal_code"}
               .signup-contents-box-inner__field
                 %b 都道府県  
                 %span.red-mini 必須

@@ -120,6 +120,7 @@ body{
           width: 100%;
           padding-bottom: 16px;
           .mypage-tabs{
+            width: 100%;
             height: 72px;
             background-color: #eee;
             display: flex;
@@ -146,6 +147,7 @@ body{
                   &__a{
                     display: flex;
                     width: 95%;
+                    height: 48px;
                     padding: 16px;
                     text-decoration: none;
                     color: #333;
@@ -212,6 +214,7 @@ body{
           height: 382px;
           background-color: #fff;
           .mypage-tab-head{
+            width: calc(100% - 32px);
             padding-left: 16px;
             height: 72px;
             background-color: #fff;

@@ -80,9 +80,9 @@ $(document).on("turbolinks:load", function() {
       
       previewFile(url, count);
       addFileFeild(count);
-
+      
     } else if (count = 10) {
-
+      
       labelForInputTag.attr("for", `item_images_attributes_${count}_url`);
       let url = inputTag[count - 1].files[0]
       

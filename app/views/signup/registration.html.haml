@@ -34,18 +34,23 @@
             %b ニックネーム 
             %span.red-mini 必須
             = f.text_field :nickname, class: 'input-field', placeholder: "   例）メルカリ太郎"
+            = render partial: 'shared/error-messages', locals: {user: @user, column: "nickname"} #ニックネームのエラー文のみ表示
           .signup-contents-box-inner__field
             %b メールアドレス
             %span.red-mini 必須
             = f.text_field :email, class: 'input-field', placeholder: "   PC・携帯どちらでも可"
+            = render partial: 'shared/error-messages', locals: {user: @user, column: "email"}
           .signup-contents-box-inner__field
             %b パスワード
             %span.red-mini 必須
-            = f.text_field :password, class: 'input-field', placeholder: "   6文字以上"
+            = f.password_field :password, class: 'input-field', placeholder: "   6文字以上"
+            = render partial: 'shared/error-messages', locals: {user: @user, column: "password"}
           .signup-contents-box-inner__field
             %b パスワード (確認)
             %span.red-mini 必須
-            = f.text_field :password_confirmation, class: 'input-field', placeholder: "   6文字以上"
+            = f.password_field :password_confirmation, class: 'input-field', placeholder: "   6文字以上"
+            = render partial: 'shared/error-messages', locals: {user: @user, column: "password_confirmation"}
+
           .signup-contents-box-inner__field
             = image_tag('/image.png', size: "340x100")
           .signup-contents-box-inner__btn
