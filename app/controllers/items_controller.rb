@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def show 
+    @random = Item.order("RAND()").limit(2).where.not(id: @item.id)
   end
 
 

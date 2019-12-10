@@ -26,6 +26,11 @@ crumb :logout do
   parent :mypage
 end
 
+crumb :show_item do
+  link "商品名",""
+  # link "#{@item.item_name}",""
+  parent :root
+end
 
 
 
