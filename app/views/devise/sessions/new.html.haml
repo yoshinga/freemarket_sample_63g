@@ -11,10 +11,11 @@
             新規会員登録
     .signup-contents-box
       .signup-contents-box-inner
-        =link_to "https://www.facebook.com/", class: "signup-contents-box-inner__btn signup-contents-box-inner__btn--facebook" do
+        = link_to user_facebook_omniauth_authorize_path, class: "signup-contents-box-inner__btn signup-contents-box-inner__btn--facebook" do
           = icon('fab', 'facebook-square', class: "signup-contents-box-inner__btn--icon")
           Facebookでログイン
-        =link_to "", class: "signup-contents-box-inner__btn signup-contents-box-inner__btn--google" do
+        =link_to user_google_oauth2_omniauth_authorize_path, class: "signup-contents-box-inner__btn signup-contents-box-inner__btn--google" do
+
           = icon('fab', 'google', class: "signup-contents-box-inner__btn--icon")
           Googleでログイン
       .signup-contents-box-inner

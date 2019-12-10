@@ -10,19 +10,19 @@ class SignupController < ApplicationController
     session[:user_params_step1] = user_params #受け取った値を:user_params_step1に代入
     @user = User.new                          #新規インスタンス作成
   end
-  
+
   def address
     @user = User.new                          #新規インスタンス作成
     @user.build_address                       #addressモデルに関連付け
   end
-  
+
   def credit_card
     session[:user_params_step2] = user_params #受けとった値をsession[:user_params_step2]に代入 userテーブルに送るカラム
     session[:address_attributes] = user_params[:address_attributes] #受けとった値をsession[:address_attributes]に代入 addressテーブルに送るカラム
     @user = User.new                          #新規インスタンス作成
     @user.build_address
   end
-    
+
   def create  
     session[:user_params_step3] = user_params   #受けとった値をsession[:user_params_step3]に代入
     session[:user_params_step3].merge!(session[:user_params_step1]).merge!(session[:user_params_step2]) #session[:user_params_step3]に前ページで入力した情報を結合
@@ -35,7 +35,6 @@ class SignupController < ApplicationController
     else
       render registration_signup_index_path   #saveできなかったら最初の入力フォームに戻る
     end
-      
   end
 
   def done
