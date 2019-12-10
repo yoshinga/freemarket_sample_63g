@@ -1,5 +1,7 @@
 .default-container
   .bread-crumbs
+    - breadcrumb :pay
+    = breadcrumbs separator: " &rsaquo; "
   .l-container
     = render "shared/mypage_side_bar"
     .l-content

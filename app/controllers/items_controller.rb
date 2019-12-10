@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-
-before_action :set_item, only:[:show, :destroy]
+  before_action :set_item, only:[:show, :destroy]
+  
   def index
     @items = Item.all
   end
@@ -48,12 +48,13 @@ before_action :set_item, only:[:show, :destroy]
   end
 
   def show 
+    @random = Item.order("RAND()").limit(2).where.not(id: @item.id)
   end
 
 
   def destroy
     if @item.destroy
-      redirect_to mypages_path
+      redirect_to root_path
     else
       redirect_to item_path
     end
@@ -79,4 +80,3 @@ before_action :set_item, only:[:show, :destroy]
   end
   
 end
-

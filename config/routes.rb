@@ -31,7 +31,7 @@ Rails.application.routes.draw do
         get 'done' #入力完了後のページ
     end
   end
-
+  
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
