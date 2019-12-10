@@ -1,14 +1,16 @@
 %body.items-show
+  %script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+  %script src="item-show.js"
   %section.item-box
     %h1.item-box__name 
       = @item.item_name
     .item-box__main.clearfix
       .item-box__main__image
         .item-box__main__image__main
-          = image_tag "#{@item.images.first.url}", alt: "商品イメージ", class: "item-box__main__image__main__top"
+          = image_tag "#{@item.images.first.url}", alt: "商品イメージ", class: "item-box__main__image__main__top", id:"main-photo"
         .item-box__main__image__subs
           - @item.images.each do |image|
-            = image_tag("#{image.url}", alt: "商品イメージ", class: "item-sub-image")
+            = image_tag("#{image.url}", alt: "商品イメージ", class: "change-photo")
           
       %table.item-box__main__table
         %tbody
@@ -58,7 +60,7 @@
       %br
       %br
       %span.item-price
-        = "¥#{@item.price}"
+        = number_to_currency(@item.price, precision: 0, unit: "¥")
       %span.item-tax (税込)
       %span.shipping-fee
         = @item.burden.name
@@ -117,7 +119,7 @@
       -# 出品者コメント
       .item-message__content
         .item-message__content__icon
-          = link_to users_path(@item.user_id), class: "user-mypage-link" do
+          = link_to  "", class: "user-mypage-link" do
             = image_tag("/user-icon-image.jpeg",alt:"アイコン画像", class: "user-icon-image")
             .item-seller
               %span.seller-font-size 出品者
@@ -146,13 +148,10 @@
 
     %ul.item-link
       %li.prev-link
-        = link_to "", class: "prev-link__1" do
-          %i.fas.fa-angle-left.prev-link-icon
-          %p.prev-link-text 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %li.next-link
-        = link_to "", class: "next-link__1" do
-          %p.next-link-text 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          %i.fas.fa-angle-right.next-link-icon
+        - @random.each do |random_item| 
+          = link_to item_path(random_item.id), class: "prev-link__1" do
+            %p.prev-link-text
+              = random_item.item_name
  
   .item-socialmedia
     %ul.item-socialmedia__box
@@ -174,10 +173,8 @@
 -#   = render 'view/items-display'
 -#   = render 'view/items-display'
 
-%nav.pos-bottom
-  %ul
-    = link_to root_path, class: "link-step" do
-      %li.step-name--1 メルカリ 
-      %i.fas.fa-angle-right.step-next-icon
-    = link_to "", class: "link-step" do
-      %li.step-name--2 オススメ DIANA ダイアナ ローファー 22㎝ エナメル ネイビー リボン(パンくず)
+.default-container
+  .bread-crumbs
+    - breadcrumb :show_item
+    = breadcrumbs separator: " &rsaquo; "
+  
