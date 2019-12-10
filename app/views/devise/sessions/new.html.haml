@@ -18,10 +18,10 @@
           = icon('fab', 'google', class: "signup-contents-box-inner__btn--icon")
           Googleでログイン
       .signup-contents-box-inner
-        = form_with class: :tel_class do |form|
+        = form_for @user, url: user_session_path, class: :tel_class, method: :post do |form|
           .signup-contents-box-inner__field
-            = form.text_field :text, class: 'input-field', placeholder: "   例）メールアドレス"
-            = form.text_field :text, class: 'input-field', placeholder: "   例）パスワード"
+            = form.email_field :email, class: 'input-field', placeholder: "   例）メールアドレス"
+            = form.password_field :password, class: 'input-field', placeholder: "   例）パスワード"
           .signup-contents-box-inner__field
             = image_tag("/ロボットimage.png",size: "328x78")
           .signup-contents-box-inner__btn
