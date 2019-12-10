@@ -31,7 +31,7 @@ describe ItemsController do
 
   describe ItemsController do
     describe 'GET #index' do
-      it "assigns the requested item to @items" do
+      it "assigns the requested items to @items" do
         items = create_list(:item, 5)
         get :index
         expect(assigns(:items)).to eq items
