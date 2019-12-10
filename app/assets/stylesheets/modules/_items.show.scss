@@ -32,8 +32,9 @@
           justify-content: flex-start;
           flex-wrap: wrap;
           .item-sub-image{
-            width: 25%;
+            width: 20%;
           }
+          
         }
       }
       .item-box__main__table{
@@ -119,6 +120,26 @@
         font-weight: bold;
       }
     }
+    .or-message{
+      padding-top: 20px;
+      text-align: center;
+      &__text{
+        font-size: 16px;
+      }
+    }
+    .buy-btn-gray{
+      width: 100%;
+      height: 50px;
+      background-color: gray;
+      text-align: center;
+      margin-top: 20px;
+      &__font{
+        color: #fff;
+        text-decoration: none;
+        line-height: 50px;
+        font-size: 16px;
+      }
+    }
     .delivery_caution{
       margin-top: 16px;
       color: #ea352d;
@@ -189,6 +210,10 @@
           a:visited {
             color: black;
           }
+          a:hover{
+            opacity: 0.5 ;
+            transition: 0.3s ;
+          }
           .user-mypage-link{
             text-decoration: none;
             .user-icon-image{
@@ -212,16 +237,15 @@
           padding: 0 16px 16px;
           &__user-name{
             font-weight: bold;
-            a:hover {
-              color: black;
-              border-bottom: solid 1px ;
-            }
             a:visited {
               color: black;
             }
             .user-mypage-link{
               text-decoration: none;
-            
+              .seller-name:hover{
+                opacity: 0.5 ;
+                transition: 0.3s ;
+              }
             }
           }
           &__body{
@@ -352,6 +376,9 @@
       justify-content: center;
       li{
         margin: 0 15px;
+        a:hover{
+          opacity: 0.5 ;
+        }
         .facebook-icon{
           color: blue;
         }

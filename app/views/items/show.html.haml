@@ -5,16 +5,10 @@
     .item-box__main.clearfix
       .item-box__main__image
         .item-box__main__image__main
-        = image_tag "#{@item.images.first.url}", alt: "商品イメージ", class: "item-box__main__image__main__top"
-        -# 複数画像投稿できるようにするのはあとで実装
-        -# .item-box__main__image__subs
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
-        -#   = image_tag("/item-image.jpeg", alt:"商品イメージ", class: "item-sub-image")
+          = image_tag "#{@item.images.first.url}", alt: "商品イメージ", class: "item-box__main__image__main__top"
+        .item-box__main__image__subs
+          - @item.images.each do |image|
+            = image_tag("#{image.url}", alt: "商品イメージ", class: "item-sub-image")
           
       %table.item-box__main__table
         %tbody
@@ -41,10 +35,6 @@
             %td.item-table-data__brand
               = link_to "ブランド名", "", class: "brand-name"
           %tr.item-table-data
-            %th 商品のサイズ
-            %td.item-table-data__size
-              L
-          %tr.item-table-data
             %th 商品の状態
             %td.item-table-data__condition
               = @item.condition.name
@@ -68,14 +58,24 @@
       %br
       %br
       %span.item-price
-        = @item.price
+        = "¥#{@item.price}"
       %span.item-tax (税込)
       %span.shipping-fee
         = @item.burden.name
-    .buy-btn
-      = link_to '購入画面に進む', purchase_items_path , class: "buy-btn__font"
-    %p.delivery_caution この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-
+    - if user_signed_in? && @item.user_id == current_user.id
+      .buy-btn
+        = link_to '商品の編集', "" , class: "buy-btn__font"
+      .or-message
+        .or-message__text
+          %p or
+      .buy-btn-gray
+        = link_to '出品を一旦停止する', "" , class: "buy-btn-gray__font"
+      .buy-btn-gray
+        = link_to '商品を削除する', item_path(@item) , class: "buy-btn-gray__font", data: {confirm: "本当に削除しますか"}, method: :delete
+    - else
+      .buy-btn
+        = link_to '購入画面に進む', purchase_items_path , class: "buy-btn__font"
+      %p.delivery_caution この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .item-box__description
       %p.item-description
         = @item.discription
@@ -117,13 +117,13 @@
       -# 出品者コメント
       .item-message__content
         .item-message__content__icon
-          = link_to  "", class: "user-mypage-link" do
+          = link_to users_path(@item.user_id), class: "user-mypage-link" do
             = image_tag("/user-icon-image.jpeg",alt:"アイコン画像", class: "user-icon-image")
             .item-seller
               %span.seller-font-size 出品者
         .item-message__content__box
           .item-message__content__box__user-name
-            = link_to  "", class: "user-mypage-link" do
+            = link_to users_path(@item.user_id), class: "user-mypage-link" do
               %p.seller-name 
                 = @item.user.nickname
           .item-message__content__box__body
@@ -176,8 +176,8 @@
 
 %nav.pos-bottom
   %ul
-    = link_to 'https://www.mercari.com/jp/', class: "link-step" do
+    = link_to root_path, class: "link-step" do
       %li.step-name--1 メルカリ 
       %i.fas.fa-angle-right.step-next-icon
-    = link_to 'https://www.mercari.com/jp/', class: "link-step" do
-      %li.step-name--2 オススメ DIANA ダイアナ ローファー 22㎝ エナメル ネイビー リボン
+    = link_to "", class: "link-step" do
+      %li.step-name--2 オススメ DIANA ダイアナ ローファー 22㎝ エナメル ネイビー リボン(パンくず)

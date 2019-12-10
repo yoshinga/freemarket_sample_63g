@@ -47,7 +47,7 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -77,6 +77,7 @@ gem 'font-awesome-sass'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'active_hash'
+gem "gretel"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
