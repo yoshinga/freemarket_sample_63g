@@ -28,4 +28,19 @@ describe ItemsController do
       end
     end
   end
+
+  describe ItemsController do
+    describe 'GET #index' do
+      it "assigns the requested item to @items" do
+        items = create_list(:item, 5)
+        get :index
+        expect(assigns(:items)).to eq items
+      end 
+      it "renders the :index template" do
+        items = create_list(:item, 5)
+        get :index
+        expect(response).to render_template :index
+      end
+    end
+  end
 end
