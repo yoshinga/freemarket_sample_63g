@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index,:new, :create, :show, :destroy] do
     member do
       get 'confirmation'
-      get 'purchase'
+      post 'purchase'
       get 'purchase_end'
     end
   end
