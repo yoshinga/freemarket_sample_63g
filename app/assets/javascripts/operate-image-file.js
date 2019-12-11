@@ -96,4 +96,8 @@ $(document).on("turbolinks:load", function() {
 
   });
 
+  $(".items-contents").on('submit', function() {
+    count =  0
+  });
+
 });
