@@ -54,10 +54,8 @@ before_action :set_item, only:[:show, :destroy, :edit, :update]
   end
 
   def edit
-    
-    # @image = exhibit_item_params[:images_attributes][:url]
-    @images = @item.images
-  
+    @image.build = @item.images.build
+   
   end
   
   def update
