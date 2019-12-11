@@ -6,10 +6,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :items, only: [:index,:new, :edit, :create, :show, :update, :destroy] do
-    member do
-      get 'confirmation'
-      post 'purchase'
-      get 'purchase_end'
+    collection do
+      get 'purchase'
     end
   end
   resources :users, only: [:index, :edit, :update]

@@ -83,3 +83,4 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem "jquery-rails"
 gem 'payjp'
+gem 'gon'

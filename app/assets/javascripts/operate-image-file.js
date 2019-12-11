@@ -70,6 +70,8 @@ $(document).on("turbolinks:load", function() {
   // 画像が一枚アップロードされるたびに発火するイベント(アップロードする画像が11枚以上になったら処理は行われない)
   $(document).on('change', '.items-contents__box__image__upload__image-label__file-field', function() {
     let inputTag = $(".items-contents__box__image__upload__image-label__file-field");
+
+    console.log(inputTag)
    
     count = count + 1
 
@@ -91,9 +93,7 @@ $(document).on("turbolinks:load", function() {
       labelForInputTag.addClass("hide-display");
 
     } else {
-
     }
-
   });
-
 });
+
