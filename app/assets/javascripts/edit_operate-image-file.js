@@ -9,11 +9,11 @@ $(window).on("turbolinks:load", function() {
   let count = 0
 
   // 登録済画像と新規追加画像を全て格納する配列（ビュー用）
-  let images = [];
+  // let images = [];
   // 登録済画像データだけの配列（DB用）
-  let registered_images_ids = [];
+  // let registered_images_ids = [];
   // 新規投稿画像データだけの配列（DB用）
-  let new_images_ids = [];
+  // let new_images_ids = [];
 
   // 登録済み画像のプレビュー表示
   gon.images.forEach(function(image, index){
@@ -42,17 +42,17 @@ $(window).on("turbolinks:load", function() {
 
     willUpLoadUl.append(img)
     // カスタムデータ属性を付与
-    img.data("image", index);
-    binary_data = gon.images_binary_datas
+    // img.data("image", index);
+    // binary_data = gon.images_binary_datas
 
     // 表示するビューにバイナリバイナリーデータを付与
-    img.find("img").attr({
-      src: "data:image/jpeg;base64,"
+    // img.find("img").attr({
+    //   src: "data:image/jpeg;base64,"
   });
     // console.log(binary_data)
     // 登録済画像のビューをimagesに格納
-    images.push(img);
-    registered_images_ids.push(image.id);
+    // images.push(img);
+    // registered_images_ids.push(image.id);
 // });
   
 
@@ -159,7 +159,4 @@ $(window).on("turbolinks:load", function() {
     } else {
     }
   });
-
-
-
 });

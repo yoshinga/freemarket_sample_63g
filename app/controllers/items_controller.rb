@@ -57,13 +57,13 @@ before_action :set_item, only:[:show, :destroy, :edit, :update]
     @a = @item.images.build
     gon.item = @item
     gon.images = @item.images.first
-    require 'base64'
-    gon.images_binary_datas = []
+    # require 'base64'
+    # gon.images_binary_datas = []
     
-      @item.images.each do |image|
-      binary_data = File.read(image.url.file.file)
-      gon.images_binary_datas << Base64.strict_encode64(binary_data)
-    end
+    #   @item.images.each do |image|
+    #   binary_data = File.read(image.url.file.file)
+    #   gon.images_binary_datas << Base64.strict_encode64(binary_data)
+    # end
 
 
   end
