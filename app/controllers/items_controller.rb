@@ -54,9 +54,9 @@ before_action :set_item, only:[:show, :destroy, :edit, :update]
   end
 
   def edit
-    
-    @item.images.build
-    @images = @item.images
+    @a = @item.images.build
+    # gon.item = @item
+    # gon.images = @item.images.first
   
   end
   
