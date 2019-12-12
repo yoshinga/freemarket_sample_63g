@@ -1,3 +1,4 @@
+= render 'view/header'
 .default-container
   .bread-crumbs
     - breadcrumb :mypage
@@ -95,3 +96,4 @@
               = link_to '過去の取引',:data => {:toggle=>"tab", :href => "#"},:class=>"mypage-tabs__li__h3__a"
         .tab-content
           取引中の商品がありません 
+= render 'view/footer'

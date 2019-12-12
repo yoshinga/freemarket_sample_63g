@@ -8,6 +8,7 @@ before_action :set_item, only:[:show, :destroy, :edit, :update]
   end
 
   def new
+    redirect_to new_user_registration_path unless user_signed_in?
     @item = Item.new
     @item.images.build
   end
