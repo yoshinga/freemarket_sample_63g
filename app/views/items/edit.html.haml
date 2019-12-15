@@ -17,11 +17,12 @@
           %p
             最大10枚までアップロードできます
         .items-contents__box__image__upload__edit
-          %ul#will-upload-ul-edit.items-contents__box__image__upload__edit__ul
-          %ul#will-upload-ul2-edit.items-contents__box__image__upload__edit__ul
-          = f.fields_for :images,  @image do |image|
-            = image.label :url, "ドラッグアンドドロップまたはクリックしてファイルをダウンロード", class: "items-contents__box__image__upload__edit__image-label"
-            = image.file_field :url, class: "items-contents__box__image__upload__edit__image-label__file-field"
+          - @item.images.each do |image|
+            %ul#will-upload-ul-edit.items-contents__box__image__upload__edit__ul
+            %ul#will-upload-ul2-edit.items-contents__box__image__upload__edit__ul
+            = f.fields_for :images, @item.images.first do |img|
+              = img.label :url, "ドラッグアンドドロップまたはクリックしてファイルをダウンロード", class: "items-contents__box__image__upload__edit__image-label"
+              = img.file_field :url, class: "items-contents__box__image__upload__edit__image-label__file-field"
       .items-contents__box__item
         .items-contents__box__item__name
           %label

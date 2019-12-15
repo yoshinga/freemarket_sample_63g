@@ -101,7 +101,7 @@ class SignupController < ApplicationController
       house_number: session[:house_number],
       building_name: session[:building_name]
     )
-      redirect_to '/signup/address' unless @user.valid? && @address.valid?     #仮で作成したインスタンスのバリデーションチェック
+      redirect_to  '/signup/address' unless @user.valid? && @address.valid?     #仮で作成したインスタンスのバリデーションチェック
   end
 
   def credit_card_validates

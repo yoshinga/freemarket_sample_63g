@@ -54,7 +54,17 @@ before_action :set_item, only:[:show, :destroy, :edit, :update]
   end
 
   def edit
-    @image = @item.images.build
+    # @image = @item.images.build
+    #  gon.item = @item
+    #  gon.images = @item.images
+    #  gon.images_binary_datas = []
+    #  require 'base64'
+
+    #   @item.images.each do |image|
+    #   binary_data = File.read(image.url.file.file)
+    #   gon.images_binary_datas << Base64.strict_encode64(binary_data)
+    # end
+
   end
   
   def update
