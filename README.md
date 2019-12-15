@@ -16,7 +16,7 @@
 |todo|references|foreign_key: true|
 |brand|references|foreign_key: true|
 
-
+ 
 ### Association
 - has_many :todos, dependent: :destroy
 - has_many :evalutions, dependent: :destroy
